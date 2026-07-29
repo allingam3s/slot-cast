@@ -33,7 +33,7 @@ jobs:
       - name: pnpm installieren
         uses: pnpm/action-setup@v3
         with:
-          version: 9
+          version: 10
 
       - name: Abhängigkeiten installieren
         run: pnpm install --frozen-lockfile
