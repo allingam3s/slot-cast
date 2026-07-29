@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 type ViewMode = 'smartphone' | 'tablet' | 'desktop';
 
@@ -81,24 +81,22 @@ export default function Preview() {
   );
 }
 
-function PreviewContent({ mode, view, key: k }: { mode: ViewMode; view: ViewConfig; key: number }) {
+function PreviewContent({ mode, view }: { mode: ViewMode; view: ViewConfig }) {
   const [config, setConfig] = useState<any>(null);
   const [platforms, setPlatforms] = useState<any[]>([]);
-  const [episodes, setEpisodes] = useState<any>({ episodes: [] });
   const [loaded, setLoaded] = useState(false);
 
   // Load data for preview
-  useState(() => {
+  useEffect(() => {
     Promise.all([
       fetch('/api/config').then(r => r.json()),
       fetch('/api/platforms').then(r => r.json()),
-      fetch('/api/rss/fetch', { method: 'POST' }).catch(() => null)
     ]).then(([cfg, plats]) => {
       setConfig(cfg);
       setPlatforms(Array.isArray(plats) ? plats : []);
       setLoaded(true);
     }).catch(() => setLoaded(true));
-  });
+  }, []);
 
   if (!loaded) {
     return (
