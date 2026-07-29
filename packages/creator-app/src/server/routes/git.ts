@@ -1,10 +1,13 @@
 import { Router, Request, Response } from 'express';
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { promisify } from 'util';
 
-const execAsync = promisify(exec);
+// Sicherheit: execFile statt exec – kein Shell-Aufruf, Argumente werden als
+// separates Array übergeben und niemals durch eine Shell interpretiert.
+const execFileAsync = promisify(execFile);
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..', '..', '..', '..', '..');
 
@@ -50,13 +53,15 @@ function translateGitError(stderr: string, stdout: string): string {
 // GET /api/git/status – Git-Status abrufen
 router.get('/status', async (_req: Request, res: Response) => {
   try {
-    // Prüfen ob git vorhanden ist
-    await execAsync('git --version', { cwd: ROOT });
-    const { stdout } = await execAsync('git status --porcelain', { cwd: ROOT });
-    const changes = stdout.trim().split('\n').filter(l => l.trim());
-    const { stdout: branch } = await execAsync('git rev-parse --abbrev-ref HEAD', { cwd: ROOT });
+    // Sicherheit: alle git-Aufrufe über execFile mit Array-Argumenten –
+    // kein Shell-Parsing, keine Injection-Möglichkeit.
+    await execFileAsync('git', ['--version'], { cwd: ROOT });
 
-    // Geänderte Dateien kategorisieren
+    const { stdout } = await execFileAsync('git', ['status', '--porcelain'], { cwd: ROOT });
+    const changes = stdout.trim().split('\n').filter(l => l.trim());
+
+    const { stdout: branch } = await execFileAsync('git', ['rev-parse', '--abbrev-ref', 'HEAD'], { cwd: ROOT });
+
     const publicChanges = changes.filter(l => l.includes('artifacts/slotcast-web/public/'));
     const otherChanges = changes.filter(l => !l.includes('artifacts/slotcast-web/public/'));
 
@@ -78,7 +83,12 @@ router.get('/status', async (_req: Request, res: Response) => {
 // POST /api/git/publish – Änderungen committen und pushen
 router.post('/publish', async (req: Request, res: Response) => {
   const { message, addAll } = req.body;
-  const commitMessage = (message || 'Aktualisierung: Podcast-Inhalte').trim();
+
+  // Commit-Nachricht bereinigen: Leerzeichen trimmen, Fallback setzen.
+  // Die Nachricht wird als einzelnes Array-Element an execFile übergeben –
+  // Shell-Sonderzeichen wie Backticks, $(), ;, && haben keinerlei Wirkung.
+  const commitMessage = (typeof message === 'string' ? message : '').trim()
+    || 'Aktualisierung: Podcast-Inhalte';
 
   if (!commitMessage) {
     res.status(400).json({ ok: false, error: 'Die Commit-Beschreibung darf nicht leer sein.' });
@@ -89,15 +99,15 @@ router.post('/publish', async (req: Request, res: Response) => {
 
   try {
     // Schritt 1: git add
-    const addPath = addAll
-      ? '.'
-      : 'artifacts/slotcast-web/public/';
-
-    await execAsync(`git add "${addPath}"`, { cwd: ROOT });
+    // addPath ist hartcodiert – keine Nutzereingabe, kein Risiko.
+    const addPath = addAll ? '.' : 'artifacts/slotcast-web/public/';
+    await execFileAsync('git', ['add', addPath], { cwd: ROOT });
     steps.push({ step: 'git add', output: `Dateien aus ${addPath} wurden zur Staging-Area hinzugefügt.` });
 
     // Schritt 2: Prüfen ob es etwas zu committen gibt
-    const { stdout: statusOut } = await execAsync('git status --porcelain --cached', { cwd: ROOT });
+    const { stdout: statusOut } = await execFileAsync(
+      'git', ['status', '--porcelain', '--cached'], { cwd: ROOT }
+    );
     if (!statusOut.trim()) {
       res.json({
         ok: true,
@@ -109,11 +119,15 @@ router.post('/publish', async (req: Request, res: Response) => {
     }
 
     // Schritt 3: git commit
-    await execAsync(`git commit -m "${commitMessage.replace(/"/g, '\\"')}"`, { cwd: ROOT });
+    // Sicherheit: commitMessage wird als eigenes Array-Element übergeben –
+    // kein Template-Literal, kein Shell-Parsing. Beliebiger Text ist sicher.
+    await execFileAsync('git', ['commit', '-m', commitMessage], { cwd: ROOT });
     steps.push({ step: 'git commit', output: `Commit erstellt: "${commitMessage}"` });
 
     // Schritt 4: git push
-    const { stdout: pushOut, stderr: pushErr } = await execAsync('git push', { cwd: ROOT });
+    const { stdout: pushOut, stderr: pushErr } = await execFileAsync(
+      'git', ['push'], { cwd: ROOT }
+    );
     steps.push({ step: 'git push', output: (pushOut || pushErr || 'Erfolgreich gepusht.').trim() });
 
     res.json({
