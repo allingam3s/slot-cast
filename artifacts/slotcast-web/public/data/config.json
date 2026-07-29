@@ -1,0 +1,19 @@
+{
+  "title": "SLOT-CAST | Der all_in_gam3s Podcast",
+  "shortTitle": "SLOT-CAST",
+  "description": "Der all_in_gam3s Podcast – Gaming, Community und mehr. Neue Folgen regelmäßig auf allen großen Plattformen.",
+  "author": "all_in_gam3s",
+  "language": "de",
+  "rssUrl": "https://anchor.fm/s/11248c624/podcast/rss",
+  "baseUrl": "",
+  "logoUrl": "images/logo.png",
+  "coverUrl": "images/cover.jpg",
+  "socialLinks": {
+    "beacons": "https://beacons.ai/all_in_gam3s",
+    "twitch": "https://twitch.tv/all_in_gam3s"
+  },
+  "seo": {
+    "keywords": "podcast, gaming, all_in_gam3s, slotcast, slot-cast, games",
+    "twitterHandle": "@all_in_gam3s"
+  }
+}

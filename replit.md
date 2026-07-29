@@ -1,6 +1,6 @@
-# [Project name]
+# SLOT-CAST | Der all_in_gam3s Podcast
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Vollständiges Podcast-Webprojekt: öffentliche Landingpage (GitHub Pages) + lokale Creator-App (localhost:3000) für den all_in_gam3s Podcast.
 
 ## Run & Operate
 

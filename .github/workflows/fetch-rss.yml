@@ -1,0 +1,56 @@
+name: RSS-Feed aktualisieren
+
+on:
+  # Automatisch alle 6 Stunden
+  schedule:
+    - cron: '0 */6 * * *'
+  # Manuell auslösbar im GitHub-Interface (Actions-Tab → "Run workflow")
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-rss:
+    name: RSS-Feed abrufen und Seite deployen
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: RSS-Feed abrufen
+        run: node scripts/fetch-rss.mjs
+
+      - name: Prüfen ob episodes.json geändert wurde
+        id: check-changes
+        run: |
+          if git diff --quiet artifacts/slotcast-web/public/data/episodes.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "Keine Änderungen in episodes.json – kein Commit nötig."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "episodes.json wurde aktualisiert."
+          fi
+
+      - name: Änderungen committen und pushen
+        if: steps.check-changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add artifacts/slotcast-web/public/data/episodes.json
+          git commit -m "chore: RSS-Feed aktualisiert [$(date -u +'%Y-%m-%d %H:%M UTC')]"
+          git push
+
+      - name: Deploy-Workflow auslösen
+        if: steps.check-changes.outputs.changed == 'true'
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: deploy-pages.yml
+          token: ${{ secrets.GITHUB_TOKEN }}

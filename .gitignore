@@ -1,49 +1,53 @@
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Abhängigkeiten
+node_modules/
+.pnpm-store/
 
-# compiled output
-dist
-tmp
-out-tsc
+# Build-Ausgaben
+dist/
+build/
 *.tsbuildinfo
-.expo
-.expo-shared
 
-# dependencies
-node_modules
+# Umgebungsvariablen (NIEMALS committen!)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
+# Betriebssystem
 .DS_Store
 Thumbs.db
+desktop.ini
 
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Replit
-.cache/
-.local/
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Temporäre Dateien
+*.backup
+*.tmp
+/tmp/
+
+# Uploads (lokal gespeicherte Bilder – werden separat verwaltet)
+# Achtung: Logo und Cover-Bild MÜSSEN committet werden!
+# Diese Zeilen nur aktivieren wenn du die Bilder explizit ausschließen willst:
+# artifacts/slotcast-web/public/images/
+
+# Creator-App (wird NICHT auf GitHub Pages deployt)
+packages/creator-app/dist/
+packages/creator-app/uploads/temp/
+
+# Replit (falls aus Replit exportiert)
+.replit
+replit.nix
+.breakpoints

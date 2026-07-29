@@ -1,0 +1,71 @@
+name: Deploy SLOT-CAST to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Legt die Berechtigungen für den GITHUB_TOKEN fest
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Verhindert parallele Deployments, wartet auf laufende Deployments
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: pnpm installieren
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Abhängigkeiten installieren
+        run: pnpm install --frozen-lockfile
+
+      - name: RSS-Feed abrufen und episodes.json erzeugen
+        run: node scripts/fetch-rss.mjs
+        continue-on-error: true  # Deployment schlägt nicht fehl, wenn Feed nicht erreichbar ist
+
+      - name: GitHub-Pages-Konfiguration ermitteln
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # BASE_PATH wird von GitHub Pages bereitgestellt (z.B. /dein-repo-name/)
+      - name: Landingpage bauen
+        run: pnpm --filter @workspace/slotcast-web run build
+        env:
+          PORT: "4173"
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      - name: Build-Artefakt hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./artifacts/slotcast-web/dist/public
+
+  deploy:
+    name: Auf GitHub Pages veröffentlichen
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Auf GitHub Pages deployen
+        id: deployment
+        uses: actions/deploy-pages@v4

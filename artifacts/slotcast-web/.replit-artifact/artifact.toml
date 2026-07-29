@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "SLOT-CAST | Der all_in_gam3s Podcast"
+version = "1.0.0"
+id = "artifacts/slotcast-web"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20084
+
+[services.development]
+run = "pnpm --filter @workspace/slotcast-web run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/slotcast-web", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/slotcast-web/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20084"
+BASE_PATH = "/"

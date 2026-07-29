@@ -1,0 +1,74 @@
+[
+  {
+    "id": "spotify",
+    "name": "Spotify",
+    "icon": "icons/spotify.svg",
+    "url": "",
+    "enabled": true,
+    "order": 1,
+    "incomplete": true
+  },
+  {
+    "id": "youtube",
+    "name": "YouTube",
+    "icon": "icons/youtube.svg",
+    "url": "https://www.youtube.com/@all_in_gam3s",
+    "enabled": true,
+    "order": 2,
+    "incomplete": false
+  },
+  {
+    "id": "youtube-music",
+    "name": "YouTube Music",
+    "icon": "icons/youtube-music.svg",
+    "url": "",
+    "enabled": true,
+    "order": 3,
+    "incomplete": true
+  },
+  {
+    "id": "amazon-music",
+    "name": "Amazon Music",
+    "icon": "icons/amazon-music.svg",
+    "url": "",
+    "enabled": true,
+    "order": 4,
+    "incomplete": true
+  },
+  {
+    "id": "castbox",
+    "name": "Castbox",
+    "icon": "icons/castbox.svg",
+    "url": "",
+    "enabled": true,
+    "order": 5,
+    "incomplete": true
+  },
+  {
+    "id": "goodpods",
+    "name": "Goodpods",
+    "icon": "icons/goodpods.svg",
+    "url": "",
+    "enabled": true,
+    "order": 6,
+    "incomplete": true
+  },
+  {
+    "id": "pocket-casts",
+    "name": "Pocket Casts",
+    "icon": "icons/pocket-casts.svg",
+    "url": "",
+    "enabled": true,
+    "order": 7,
+    "incomplete": true
+  },
+  {
+    "id": "podimo",
+    "name": "Podimo",
+    "icon": "icons/podimo.svg",
+    "url": "",
+    "enabled": true,
+    "order": 8,
+    "incomplete": true
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "impressum": {
+    "title": "Impressum",
+    "content": [
+      {
+        "heading": "Angaben gemäß § 5 TMG",
+        "text": "**[Dein vollständiger Name]**\n[Straße und Hausnummer]\n[PLZ Ort]\n\nE-Mail: [deine@email.de]"
+      },
+      {
+        "heading": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+        "text": "[Dein vollständiger Name]\n[Straße und Hausnummer]\n[PLZ Ort]"
+      },
+      {
+        "heading": "Haftungsausschluss",
+        "text": "Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich."
+      },
+      {
+        "heading": "Haftung für Links",
+        "text": "Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich."
+      },
+      {
+        "heading": "Urheberrecht",
+        "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+      }
+    ]
+  },
+  "datenschutz": {
+    "title": "Datenschutzerklärung",
+    "content": [
+      {
+        "heading": "1. Datenschutz auf einen Blick",
+        "text": "Die Nutzung dieser Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Diese Seite erhebt und speichert keine personenbezogenen Daten aktiv."
+      },
+      {
+        "heading": "2. Hosting bei GitHub Pages",
+        "text": "Diese Website wird bei GitHub Pages gehostet. Anbieter ist die GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA. Beim Abruf der Seiten kann GitHub Serverlogs mit IP-Adressen und Zugriffszeiten speichern. Weitere Informationen findest du in der Datenschutzerklärung von GitHub: https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
+      },
+      {
+        "heading": "3. Externe Podcast-Plattformen",
+        "text": "Die Podcast-Inhalte werden über externe Plattformen (Spotify, YouTube, Amazon Music u. a.) bereitgestellt. Beim Aufrufen der verlinkten Dienste gelten die jeweiligen Datenschutzbestimmungen der Anbieter. Diese Seite überträgt beim Klick auf einen Plattform-Link keine Daten an die Plattform — erst beim Öffnen der Plattform-Seite selbst gelten deren Bedingungen."
+      },
+      {
+        "heading": "4. RSS-Feed",
+        "text": "Der Podcast-RSS-Feed wird über Anchor (Spotify for Podcasters) bereitgestellt. Die Episodendaten werden regelmäßig auf diese Seite übertragen und als statische Datei gespeichert. Es werden keine Nutzerdaten an Anchor übertragen, wenn du diese Seite besuchst."
+      },
+      {
+        "heading": "5. Kontakt",
+        "text": "Wenn du uns per E-Mail kontaktierst, werden deine Angaben aus der E-Mail zur Bearbeitung der Anfrage gespeichert. Diese Daten geben wir nicht ohne deine Einwilligung weiter und löschen sie, sobald die Anfrage erledigt ist."
+      },
+      {
+        "heading": "6. Keine Cookies",
+        "text": "Diese Webseite verwendet keine Cookies und keine Tracking-Technologien."
+      }
+    ]
+  }
+}
