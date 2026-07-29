@@ -45,7 +45,7 @@ const vite = await createViteServer({
 app.use(vite.middlewares);
 
 // Server starten
-app.listen(PORT, () => {
+app.listen(PORT, '127.0.0.1', () => {
   const url = `http://localhost:${PORT}`;
   console.log('');
   console.log('══════════════════════════════════════════════');
