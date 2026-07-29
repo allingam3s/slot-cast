@@ -8,7 +8,7 @@ export function Header() {
   }
 
   return (
-    <header className="flex flex-col items-center justify-center pt-24 pb-16 text-center stagger-enter" style={{ animationDelay: '0ms' }}>
+    <header className="flex flex-col items-center justify-center pt-12 pb-10 md:pt-24 md:pb-16 text-center stagger-enter" style={{ animationDelay: '0ms' }}>
       {config.logoUrl && (
         <img 
           src={`${import.meta.env.BASE_URL}${config.logoUrl}`} 

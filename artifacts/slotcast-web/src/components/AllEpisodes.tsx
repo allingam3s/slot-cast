@@ -14,7 +14,7 @@ export function AllEpisodes() {
   
   if (episodes.length === 0) {
     return (
-      <section className="mb-20 stagger-enter" style={{ animationDelay: '200ms' }}>
+      <section className="mb-12 md:mb-20 stagger-enter" style={{ animationDelay: '200ms' }}>
         <h2 className="heading-exo section-heading">Alle Folgen</h2>
         <Panel>
           <p className="text-lg font-medium">Bisher keine Folgen verfügbar.</p>
@@ -24,7 +24,7 @@ export function AllEpisodes() {
   }
 
   return (
-    <section className="mb-20 stagger-enter" style={{ animationDelay: '200ms' }}>
+    <section className="mb-12 md:mb-20 stagger-enter" style={{ animationDelay: '200ms' }}>
       <h2 className="heading-exo section-heading">Alle Folgen</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -16,7 +16,7 @@ export function Platforms() {
   if (platforms.length === 0) return null;
 
   return (
-    <section className="mb-20 stagger-enter" style={{ animationDelay: '300ms' }}>
+    <section className="mb-12 md:mb-20 stagger-enter" style={{ animationDelay: '300ms' }}>
       <h2 className="heading-exo section-heading">Auf diesen Plattformen hören</h2>
       
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">

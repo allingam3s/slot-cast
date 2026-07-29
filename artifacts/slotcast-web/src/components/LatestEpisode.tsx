@@ -21,7 +21,7 @@ export function LatestEpisode() {
   const latest = sortedEpisodes[0];
 
   return (
-    <section className="mb-20 stagger-enter" style={{ animationDelay: '100ms' }}>
+    <section className="mb-12 md:mb-20 stagger-enter" style={{ animationDelay: '100ms' }}>
       <h2 className="heading-exo section-heading">Hör jetzt in die neueste Folge rein!</h2>
       
       {!latest ? (
