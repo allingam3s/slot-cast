@@ -51,3 +51,7 @@ packages/creator-app/uploads/temp/
 .replit
 replit.nix
 .breakpoints
+
+# Replit-interne Ordner – nicht auf GitHub pushen
+.local/
+.agents/
