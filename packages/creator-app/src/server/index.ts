@@ -56,8 +56,10 @@ app.listen(PORT, '127.0.0.1', () => {
   console.log('');
 
   // Browser automatisch öffnen
+  // Windows: start braucht einen leeren Titel ("") vor der URL,
+  // sonst interpretiert cmd.exe den Doppelpunkt in "http:" als Fenstertitel.
   const openCmd = process.platform === 'win32'
-    ? `start ${url}`
+    ? `start "" "${url}"`
     : process.platform === 'darwin'
       ? `open ${url}`
       : `xdg-open ${url}`;
