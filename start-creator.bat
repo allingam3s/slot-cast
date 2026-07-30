@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 chcp 65001 > nul
 title SLOT-CAST Creator-App
 
@@ -8,9 +9,9 @@ echo   Der all_in_gam3s Podcast
 echo ============================================
 echo.
 
-:: Prüfen ob Node.js installiert ist
+:: ── Node.js prüfen ──────────────────────────────────────────────────────────
 node --version > nul 2>&1
-if %ERRORLEVEL% NEQ 0 (
+if !ERRORLEVEL! NEQ 0 (
     echo FEHLER: Node.js wurde nicht gefunden!
     echo.
     echo Bitte Node.js installieren:
@@ -21,67 +22,98 @@ if %ERRORLEVEL% NEQ 0 (
     pause
     exit /b 1
 )
-
-:: Node.js Version anzeigen
-echo Node.js: 
+echo Node.js:
 node --version
 
-:: Prüfen ob pnpm installiert ist
+:: ── pnpm prüfen ─────────────────────────────────────────────────────────────
 pnpm --version > nul 2>&1
-if %ERRORLEVEL% NEQ 0 (
-    echo pnpm nicht gefunden. Installiere pnpm...
+if !ERRORLEVEL! NEQ 0 (
+    echo pnpm nicht gefunden. Installiere pnpm global...
     npm install -g pnpm
-    if %ERRORLEVEL% NEQ 0 (
+    set NPM_EXIT=!ERRORLEVEL!
+    if !NPM_EXIT! NEQ 0 (
+        echo.
         echo FEHLER: pnpm konnte nicht installiert werden.
-        echo Versuche: npm install -g pnpm
+        echo Versuche es manuell: npm install -g pnpm
+        echo.
         pause
         exit /b 1
     )
+    echo.
+    echo pnpm wurde erfolgreich installiert.
+    echo.
+    echo WICHTIG: Bitte dieses Fenster schliessen und
+    echo          start-creator.bat erneut starten,
+    echo          damit Windows den neuen Befehl erkennt.
+    echo.
+    pause
+    exit /b 0
 )
-
 echo pnpm:
 pnpm --version
 echo.
 
-:: In das Projektverzeichnis wechseln (relativ zur Batch-Datei)
+:: ── In Projektverzeichnis wechseln ──────────────────────────────────────────
 cd /d "%~dp0"
+if !ERRORLEVEL! NEQ 0 (
+    echo FEHLER: Konnte nicht in das Projektverzeichnis wechseln.
+    echo Pfad: %~dp0
+    echo.
+    pause
+    exit /b 1
+)
 
-:: Abhängigkeiten installieren (nur wenn nötig)
+:: ── Abhaengigkeiten installieren (nur beim Erststart) ────────────────────────
 if not exist "packages\creator-app\node_modules" (
-    echo Installiere Abhaengigkeiten (einmalig, kann einige Minuten dauern)...
+    echo Installiere Abhaengigkeiten ^(einmalig, kann einige Minuten dauern^)...
     echo.
     cd packages\creator-app
     pnpm install
-    if %ERRORLEVEL% NEQ 0 (
+    set INSTALL_EXIT=!ERRORLEVEL!
+    cd /d "%~dp0"
+    if !INSTALL_EXIT! NEQ 0 (
+        echo.
         echo FEHLER: Abhaengigkeiten konnten nicht installiert werden.
-        echo Versuche manuell: cd packages\creator-app ^&^& pnpm install
+        echo.
+        echo Versuche manuell:
+        echo   1. Oeffne CMD in diesem Ordner
+        echo   2. Fuehre aus: cd packages\creator-app
+        echo   3. Fuehre aus: pnpm install
+        echo.
         pause
         exit /b 1
     )
-    cd /d "%~dp0"
+    echo.
+    echo Abhaengigkeiten erfolgreich installiert.
 ) else (
     echo Abhaengigkeiten bereits vorhanden.
 )
 
+:: ── Creator-App starten ──────────────────────────────────────────────────────
 echo.
 echo Starte Creator-App...
 echo Die App oeffnet sich gleich im Browser unter: http://localhost:3000
 echo.
 echo Um die App zu beenden: Dieses Fenster schliessen oder Strg+C druecken.
+echo ============================================
 echo.
 
-:: Creator-App starten
 cd packages\creator-app
 pnpm start
 
-if %ERRORLEVEL% NEQ 0 (
-    echo.
-    echo FEHLER: Die Creator-App konnte nicht gestartet werden.
+:: ── Nach dem Beenden der App ─────────────────────────────────────────────────
+set APP_EXIT=!ERRORLEVEL!
+echo.
+if !APP_EXIT! NEQ 0 (
+    echo FEHLER: Die Creator-App wurde mit einem Fehler beendet. ^(Code: !APP_EXIT!^)
     echo.
     echo Moegliche Ursachen:
-    echo   - Port 3000 ist bereits belegt (andere App laeuft auf diesem Port)
-    echo   - Fehlende Abhaengigkeiten: pnpm install ausfuehren
+    echo   - Port 3000 ist bereits belegt
+    echo   - Abhaengigkeiten unvollstaendig: packages\creator-app\node_modules loeschen
+    echo     und start-creator.bat erneut starten
     echo   - Berechtigungsfehler: Als Administrator ausfuehren
-    echo.
-    pause
+) else (
+    echo Die Creator-App wurde beendet.
 )
+echo.
+pause
