@@ -10,7 +10,7 @@ echo ============================================
 echo.
 
 :: ── Node.js prüfen ──────────────────────────────────────────────────────────
-node --version > nul 2>&1
+call node --version > nul 2>&1
 if !ERRORLEVEL! NEQ 0 (
     echo FEHLER: Node.js wurde nicht gefunden!
     echo.
@@ -26,10 +26,10 @@ echo Node.js:
 node --version
 
 :: ── pnpm prüfen ─────────────────────────────────────────────────────────────
-pnpm --version > nul 2>&1
+call pnpm --version > nul 2>&1
 if !ERRORLEVEL! NEQ 0 (
     echo pnpm nicht gefunden. Installiere pnpm global...
-    npm install -g pnpm
+    call npm install -g pnpm
     set NPM_EXIT=!ERRORLEVEL!
     if !NPM_EXIT! NEQ 0 (
         echo.
@@ -50,7 +50,7 @@ if !ERRORLEVEL! NEQ 0 (
     exit /b 0
 )
 echo pnpm:
-pnpm --version
+call pnpm --version
 echo.
 
 :: ── In Projektverzeichnis wechseln ──────────────────────────────────────────
@@ -68,7 +68,7 @@ if not exist "packages\creator-app\node_modules" (
     echo Installiere Abhaengigkeiten ^(einmalig, kann einige Minuten dauern^)...
     echo.
     cd packages\creator-app
-    pnpm install
+    call pnpm install
     set INSTALL_EXIT=!ERRORLEVEL!
     cd /d "%~dp0"
     if !INSTALL_EXIT! NEQ 0 (
@@ -99,7 +99,7 @@ echo ============================================
 echo.
 
 cd packages\creator-app
-pnpm start
+call pnpm start
 
 :: ── Nach dem Beenden der App ─────────────────────────────────────────────────
 set APP_EXIT=!ERRORLEVEL!
