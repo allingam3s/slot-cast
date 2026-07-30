@@ -63,31 +63,30 @@ if !ERRORLEVEL! NEQ 0 (
     exit /b 1
 )
 
-:: ── Abhaengigkeiten installieren (nur beim Erststart) ────────────────────────
-if not exist "packages\creator-app\node_modules" (
-    echo Installiere Abhaengigkeiten ^(einmalig, kann einige Minuten dauern^)...
+:: ── Abhaengigkeiten pruefen und installieren ─────────────────────────────────
+:: Laeuft immer – ist schnell wenn aktuell (nur Lockfile-Check, kein Download).
+:: Notwendig damit pnpm 11 den Lockfile vor dem Start aktualisiert und
+:: onlyBuiltDependencies aus pnpm-workspace.yaml korrekt anwendet.
+echo Pruefe Abhaengigkeiten...
+echo.
+cd packages\creator-app
+call pnpm install
+set INSTALL_EXIT=!ERRORLEVEL!
+cd /d "%~dp0"
+if !INSTALL_EXIT! NEQ 0 (
     echo.
-    cd packages\creator-app
-    call pnpm install
-    set INSTALL_EXIT=!ERRORLEVEL!
-    cd /d "%~dp0"
-    if !INSTALL_EXIT! NEQ 0 (
-        echo.
-        echo FEHLER: Abhaengigkeiten konnten nicht installiert werden.
-        echo.
-        echo Versuche manuell:
-        echo   1. Oeffne CMD in diesem Ordner
-        echo   2. Fuehre aus: cd packages\creator-app
-        echo   3. Fuehre aus: pnpm install
-        echo.
-        pause
-        exit /b 1
-    )
+    echo FEHLER: Abhaengigkeiten konnten nicht installiert werden.
     echo.
-    echo Abhaengigkeiten erfolgreich installiert.
-) else (
-    echo Abhaengigkeiten bereits vorhanden.
+    echo Versuche manuell:
+    echo   1. Oeffne CMD in diesem Ordner
+    echo   2. Fuehre aus: cd packages\creator-app
+    echo   3. Fuehre aus: pnpm install
+    echo.
+    pause
+    exit /b 1
 )
+echo.
+echo Abhaengigkeiten aktuell.
 
 :: ── Creator-App starten ──────────────────────────────────────────────────────
 echo.
