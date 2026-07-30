@@ -3,3 +3,8 @@ packages:
 
 onlyBuiltDependencies:
   - esbuild
+
+# Die 24-Stunden-Mindestalter-Regel gilt für den öffentlichen Website-Build
+# (Schutz vor Supply-Chain-Angriffen). Für die lokale Creator-App (Windows-only,
+# nie deployed) ist sie ein reines Hindernis — hier deaktiviert.
+minimumReleaseAge: 0
