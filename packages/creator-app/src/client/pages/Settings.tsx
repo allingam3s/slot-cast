@@ -40,7 +40,10 @@ export default function Settings() {
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [coverPreview, setCoverPreview] = useState<string | null>(null);
   const [uploading, setUploading] = useState<'logo' | 'cover' | null>(null);
-  const logoRef = useRef<HTMLInputElement>(null);
+
+  // Refs auf versteckte <input type="file"> – liegen AUSSERHALB der klickbaren
+  // Upload-Bereiche, damit kein doppeltes Click-Event entsteht (Opera-Bug).
+  const logoRef  = useRef<HTMLInputElement>(null);
   const coverRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -96,7 +99,8 @@ export default function Settings() {
 
   async function handleUpload(type: 'logo' | 'cover', file: File) {
     if (!file) return;
-    const maxMb = 5;
+
+    const maxMb = 20;
     if (file.size > maxMb * 1024 * 1024) {
       setAlert({ type: 'error', text: `Die Datei ist zu groß. Maximal ${maxMb} MB erlaubt.` });
       return;
@@ -106,20 +110,28 @@ export default function Settings() {
       setAlert({ type: 'error', text: 'Nur PNG, JPG und WEBP-Dateien sind erlaubt.' });
       return;
     }
+
     setUploading(type);
+    setAlert(null);
+
     const formData = new FormData();
     formData.append('file', file);
     try {
       const res = await fetch(`/api/upload/${type}`, { method: 'POST', body: formData });
       const data = await res.json();
       if (res.ok) {
+        // Vorschau aus der hochgeladenen Originaldatei erzeugen (sofortige Anzeige)
         const reader = new FileReader();
         reader.onload = e => {
           if (type === 'logo') setLogoPreview(e.target?.result as string);
           else setCoverPreview(e.target?.result as string);
         };
         reader.readAsDataURL(file);
-        setAlert({ type: 'success', text: `${type === 'logo' ? 'Logo' : 'Cover'} erfolgreich hochgeladen: ${data.filename}` });
+
+        setAlert({
+          type: 'success',
+          text: `${type === 'logo' ? 'Logo' : 'Cover'} optimiert und gespeichert: ${data.width}×${data.height} px, ${data.sizeKb} KB WebP`
+        });
         set(type === 'logo' ? 'logoUrl' : 'coverUrl', data.path);
       } else {
         setAlert({ type: 'error', text: data.error || 'Upload fehlgeschlagen.' });
@@ -128,6 +140,12 @@ export default function Settings() {
       setAlert({ type: 'error', text: 'Upload fehlgeschlagen. Ist die Creator-App noch gestartet?' });
     }
     setUploading(null);
+  }
+
+  // Öffnet den Datei-Dialog über den Ref – Input liegt außerhalb des Divs,
+  // daher kein doppeltes Auslösen durch Event-Bubbling.
+  function openPicker(ref: React.RefObject<HTMLInputElement | null>) {
+    ref.current?.click();
   }
 
   if (loading) return <div style={{ padding: 40, color: 'var(--text-muted)' }}>Einstellungen werden geladen...</div>;
@@ -194,38 +212,89 @@ export default function Settings() {
 
       <div className="card">
         <div className="card-title">Bilder</div>
+
+        {/*
+          Versteckte Datei-Inputs AUSSERHALB der klickbaren Upload-Divs.
+          Grund: Liegt der Input im Div, bubbled sein Click-Event nach oben und
+          löst den onClick des Divs ein zweites Mal aus (sichtbar in Opera als
+          doppelter Datei-Auswahl-Dialog). Durch die Trennung gibt es nur einen
+          einzigen Auslöser: openPicker() → ref.current.click().
+        */}
+        <input
+          ref={logoRef}
+          type="file"
+          accept=".png,.jpg,.jpeg,.webp"
+          style={{ display: 'none' }}
+          onChange={e => {
+            if (e.target.files?.[0]) handleUpload('logo', e.target.files[0]);
+            e.target.value = ''; // Reset: erlaubt erneutes Hochladen derselben Datei
+          }}
+        />
+        <input
+          ref={coverRef}
+          type="file"
+          accept=".png,.jpg,.jpeg,.webp"
+          style={{ display: 'none' }}
+          onChange={e => {
+            if (e.target.files?.[0]) handleUpload('cover', e.target.files[0]);
+            e.target.value = ''; // Reset: erlaubt erneutes Hochladen derselben Datei
+          }}
+        />
+
         <div className="form-row">
           <div className="form-group">
-            <label>Logo (PNG, JPG, WEBP – max. 5 MB)</label>
-            <div className="upload-area" onClick={() => logoRef.current?.click()}>
-              <input ref={logoRef} type="file" accept=".png,.jpg,.jpeg,.webp" onChange={e => e.target.files?.[0] && handleUpload('logo', e.target.files[0])} />
+            <label>Logo (PNG, JPG, WEBP – max. 20 MB)<br /><span className="text-muted" style={{ fontWeight: 400, fontSize: '0.82rem' }}>Wird automatisch auf max. 512×512 px optimiert</span></label>
+            <div
+              className="upload-area"
+              onClick={() => openPicker(logoRef)}
+              role="button"
+              aria-label="Logo hochladen"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && openPicker(logoRef)}
+            >
               {logoPreview
                 ? <img src={logoPreview} alt="Logo Vorschau" className="img-preview" />
                 : <>
                   <div className="upload-icon">🖼️</div>
                   <p><strong>Klicken zum Hochladen</strong></p>
-                  <p>PNG, JPG oder WEBP</p>
+                  <p>PNG, JPG oder WEBP · bis 20 MB</p>
                   {uploading === 'logo' && <span className="spinner" style={{ margin: '8px auto 0', display: 'block' }} />}
                 </>
               }
+              {uploading === 'logo' && logoPreview && (
+                <span className="spinner" style={{ position: 'absolute', bottom: 8, right: 8 }} />
+              )}
             </div>
           </div>
           <div className="form-group">
-            <label>Cover-Bild (PNG, JPG, WEBP – max. 5 MB)</label>
-            <div className="upload-area" onClick={() => coverRef.current?.click()}>
-              <input ref={coverRef} type="file" accept=".png,.jpg,.jpeg,.webp" onChange={e => e.target.files?.[0] && handleUpload('cover', e.target.files[0])} />
+            <label>Cover-Bild (PNG, JPG, WEBP – max. 20 MB)<br /><span className="text-muted" style={{ fontWeight: 400, fontSize: '0.82rem' }}>Wird automatisch auf max. 1600×1600 px optimiert</span></label>
+            <div
+              className="upload-area"
+              onClick={() => openPicker(coverRef)}
+              role="button"
+              aria-label="Cover hochladen"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && openPicker(coverRef)}
+            >
               {coverPreview
                 ? <img src={coverPreview} alt="Cover Vorschau" className="img-preview" />
                 : <>
                   <div className="upload-icon">📷</div>
                   <p><strong>Klicken zum Hochladen</strong></p>
-                  <p>PNG, JPG oder WEBP</p>
+                  <p>PNG, JPG oder WEBP · bis 20 MB</p>
                   {uploading === 'cover' && <span className="spinner" style={{ margin: '8px auto 0', display: 'block' }} />}
                 </>
               }
+              {uploading === 'cover' && coverPreview && (
+                <span className="spinner" style={{ position: 'absolute', bottom: 8, right: 8 }} />
+              )}
             </div>
           </div>
         </div>
+
+        <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: 8 }}>
+          Bilder werden serverseitig auf Webgröße komprimiert (WebP) und in <code>public/images/</code> gespeichert.
+        </p>
       </div>
 
       <div className="card">
