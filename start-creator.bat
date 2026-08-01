@@ -66,7 +66,7 @@ if !ERRORLEVEL! NEQ 0 (
 :: ── Abhaengigkeiten pruefen und installieren ─────────────────────────────────
 :: Laeuft immer – ist schnell wenn aktuell (nur Lockfile-Check, kein Download).
 :: Notwendig damit pnpm 11 den Lockfile vor dem Start aktualisiert und
-:: onlyBuiltDependencies aus pnpm-workspace.yaml korrekt anwendet.
+:: allowBuilds aus pnpm-workspace.yaml korrekt anwendet (pnpm-11-Syntax).
 echo Pruefe Abhaengigkeiten...
 echo.
 cd packages\creator-app

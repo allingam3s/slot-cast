@@ -4,9 +4,6 @@
   "description": "SLOT-CAST Creator-App – lokale Verwaltungs-App für den all_in_gam3s Podcast",
   "private": true,
   "type": "module",
-  "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
-  },
   "scripts": {
     "start": "tsx src/server/index.ts",
     "dev": "tsx watch src/server/index.ts",

@@ -1,8 +1,13 @@
 packages:
   - .
 
-onlyBuiltDependencies:
-  - esbuild
+# pnpm 11: allowBuilds ersetzt onlyBuiltDependencies (Breaking Change in pnpm 11).
+# Map-Format: Paketname → true (erlaubt) / false (blockiert).
+# Deckt beide im Lockfile vorhandenen esbuild-Versionen ab:
+#   esbuild@0.21.5 – kommt von vite@5.4.x
+#   esbuild@0.28.1 – kommt von tsx@4.23.x
+allowBuilds:
+  esbuild: true
 
 # Die 24-Stunden-Mindestalter-Regel gilt für den öffentlichen Website-Build
 # (Schutz vor Supply-Chain-Angriffen). Für die lokale Creator-App (Windows-only,
