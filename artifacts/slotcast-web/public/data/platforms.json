@@ -3,16 +3,16 @@
     "id": "spotify",
     "name": "Spotify",
     "icon": "icons/spotify.svg",
-    "url": "",
+    "url": "https://open.spotify.com/show/3Zo6P6hscI30KfPSXW38rQ?si=aCXhYrsRSaCn5b14bmNvWg",
     "enabled": true,
     "order": 1,
-    "incomplete": true
+    "incomplete": false
   },
   {
-    "id": "youtube",
-    "name": "YouTube",
-    "icon": "icons/youtube.svg",
-    "url": "https://www.youtube.com/@all_in_gam3s",
+    "id": "podimo",
+    "name": "Podimo",
+    "icon": "icons/podimo.svg",
+    "url": "https://open.podimo.com/podcast/31829aba-4356-4ce3-bafe-00a86f4f7b05",
     "enabled": true,
     "order": 2,
     "incomplete": false
@@ -21,54 +21,54 @@
     "id": "youtube-music",
     "name": "YouTube Music",
     "icon": "icons/youtube-music.svg",
-    "url": "",
+    "url": "https://music.youtube.com/playlist?list=PLI8jnQPBtPk-eBK4q8q3kBuS3KHxcEQPK&si=S1iDsVdfAA6Tj_RS",
     "enabled": true,
     "order": 3,
-    "incomplete": true
+    "incomplete": false
+  },
+  {
+    "id": "youtube",
+    "name": "YouTube",
+    "icon": "icons/youtube.svg",
+    "url": "https://www.youtube.com/@all_in_gam3s",
+    "enabled": true,
+    "order": 4,
+    "incomplete": false
   },
   {
     "id": "amazon-music",
     "name": "Amazon Music",
     "icon": "icons/amazon-music.svg",
-    "url": "",
+    "url": "https://music.amazon.de/podcasts/21f5a050-491f-47db-828d-e3b14252052c/slot-cast-der-all_in_gam3s-podcast",
     "enabled": true,
-    "order": 4,
-    "incomplete": true
+    "order": 5,
+    "incomplete": false
   },
   {
     "id": "castbox",
     "name": "Castbox",
     "icon": "icons/castbox.svg",
-    "url": "",
+    "url": "https://castbox.fm/vh/7205194",
     "enabled": true,
-    "order": 5,
-    "incomplete": true
+    "order": 6,
+    "incomplete": false
   },
   {
     "id": "goodpods",
     "name": "Goodpods",
     "icon": "icons/goodpods.svg",
     "url": "",
-    "enabled": true,
-    "order": 6,
+    "enabled": false,
+    "order": 7,
     "incomplete": true
   },
   {
     "id": "pocket-casts",
     "name": "Pocket Casts",
     "icon": "icons/pocket-casts.svg",
-    "url": "",
-    "enabled": true,
-    "order": 7,
-    "incomplete": true
-  },
-  {
-    "id": "podimo",
-    "name": "Podimo",
-    "icon": "icons/podimo.svg",
-    "url": "",
+    "url": "https://pca.st/zd7ub0xt",
     "enabled": true,
     "order": 8,
-    "incomplete": true
+    "incomplete": false
   }
 ]
