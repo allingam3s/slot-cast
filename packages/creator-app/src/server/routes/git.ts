@@ -104,9 +104,11 @@ router.post('/publish', async (req: Request, res: Response) => {
     await execFileAsync('git', ['add', addPath], { cwd: ROOT });
     steps.push({ step: 'git add', output: `Dateien aus ${addPath} wurden zur Staging-Area hinzugefügt.` });
 
-    // Schritt 2: Prüfen ob es etwas zu committen gibt
+    // Schritt 2: Prüfen ob es etwas zu committen gibt.
+    // 'git diff --cached --name-only' listet alle gestagten Dateien –
+    // 'git status --cached' existiert nicht und schlägt unter Windows fehl.
     const { stdout: statusOut } = await execFileAsync(
-      'git', ['status', '--porcelain', '--cached'], { cwd: ROOT }
+      'git', ['diff', '--cached', '--name-only'], { cwd: ROOT }
     );
     if (!statusOut.trim()) {
       res.json({
