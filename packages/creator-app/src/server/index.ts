@@ -34,6 +34,13 @@ app.use('/api/upload', uploadRouter);
 app.use('/api/backup', backupRouter);
 app.use('/api/git', gitRouter);
 
+// Statische Bilder aus dem Landingpage-Public-Ordner ausliefern.
+// Upload schreibt nach artifacts/slotcast-web/public/images/ → hier unter /images/ erreichbar.
+app.use('/images', express.static(
+  path.resolve(ROOT, 'artifacts', 'slotcast-web', 'public', 'images'),
+  { maxAge: 0 }   // kein Browser-Cache während der Entwicklung
+));
+
 // Vite Dev-Middleware (serviert die React-App)
 const vite = await createViteServer({
   configFile: path.resolve(__dirname, '..', '..', 'vite.config.ts'),

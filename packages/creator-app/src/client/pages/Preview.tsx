@@ -7,7 +7,6 @@ interface ViewConfig {
   icon: string;
   width: number;
   height: number;
-  frameScale?: number;
 }
 
 const VIEWS: Record<ViewMode, ViewConfig> = {
@@ -21,12 +20,6 @@ export default function Preview() {
   const [key, setKey] = useState(0);
 
   const view = VIEWS[mode];
-
-  // Die Landingpage läuft im Replit-Workflow auf PORT, aber lokal können wir sie
-  // nicht direkt aufrufen — stattdessen zeigen wir den IFRAME mit der öffentlichen
-  // Seite oder einem lokalen Build.
-  // Fallback: Seite aus dem öffentlichen data-Ordner laden
-  const previewUrl = window.location.origin + '/preview-frame';
 
   return (
     <div>
@@ -65,10 +58,7 @@ export default function Preview() {
       }}>
         <div
           className="preview-frame-wrapper"
-          style={{
-            width: view.width,
-            maxWidth: '100%',
-          }}
+          style={{ width: view.width, maxWidth: '100%' }}
         >
           <PreviewContent key={key} mode={mode} view={view} />
         </div>
@@ -86,7 +76,6 @@ function PreviewContent({ mode, view }: { mode: ViewMode; view: ViewConfig }) {
   const [platforms, setPlatforms] = useState<any[]>([]);
   const [loaded, setLoaded] = useState(false);
 
-  // Load data for preview
   useEffect(() => {
     Promise.all([
       fetch('/api/config').then(r => r.json()),
@@ -107,6 +96,12 @@ function PreviewContent({ mode, view }: { mode: ViewMode; view: ViewConfig }) {
   }
 
   const enabledPlatforms = platforms.filter(p => p.enabled);
+  const isSmall = mode === 'smartphone';
+
+  // Bildpfade: config.logoUrl = "images/logo.webp" → absoluter Pfad "/images/logo.webp"
+  // Der Express-Server liefert /images/* aus artifacts/slotcast-web/public/images/
+  const logoSrc  = config?.logoUrl  ? `/${config.logoUrl}`  : null;
+  const coverSrc = config?.coverUrl ? `/${config.coverUrl}` : null;
 
   return (
     <div style={{
@@ -115,26 +110,74 @@ function PreviewContent({ mode, view }: { mode: ViewMode; view: ViewConfig }) {
       background: 'linear-gradient(to bottom, #0847E4 0%, #3C9FE0 50%, #6FEFD7 100%)',
       fontFamily: "'Inter', sans-serif",
       overflow: 'hidden',
-      fontSize: mode === 'smartphone' ? '14px' : '16px',
-      padding: mode === 'smartphone' ? '20px 16px' : '32px 40px'
+      fontSize: isSmall ? '14px' : '16px',
+      padding: isSmall ? '20px 16px' : '32px 40px',
+      boxSizing: 'border-box',
     }}>
-      {/* Header */}
-      <div style={{ textAlign: 'center', paddingBottom: 32 }}>
-        <h1 style={{ fontFamily: "'Exo 2', sans-serif", fontWeight: 800, fontSize: mode === 'smartphone' ? '1.8rem' : '2.5rem', color: 'white', lineHeight: 1.1 }}>
+
+      {/* ── Header: Logo + Titel ── */}
+      <div style={{ textAlign: 'center', paddingBottom: 24 }}>
+        {logoSrc && (
+          <img
+            src={logoSrc}
+            alt="Podcast Logo"
+            style={{
+              width:        isSmall ? 64 : 80,
+              height:       isSmall ? 64 : 80,
+              objectFit:    'contain',
+              borderRadius: 12,
+              marginBottom: 14,
+              display:      'block',
+              margin:       '0 auto 14px',
+              // Weicher Schatten damit es auf dem blauen Grund abhebt
+              filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.35))',
+            }}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+        )}
+        <h1 style={{
+          fontFamily: "'Exo 2', sans-serif",
+          fontWeight: 800,
+          fontSize:   isSmall ? '1.8rem' : '2.5rem',
+          color:      'white',
+          lineHeight: 1.1,
+          margin:     0,
+        }}>
           {config?.shortTitle || 'SLOT-CAST'}
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.85)', marginTop: 8, fontSize: mode === 'smartphone' ? '0.9rem' : '1rem' }}>
+        <p style={{ color: 'rgba(255,255,255,0.85)', marginTop: 8, fontSize: isSmall ? '0.9rem' : '1rem' }}>
           {config?.description || 'Der all_in_gam3s Podcast'}
         </p>
       </div>
 
-      {/* Neueste Folge placeholder */}
+      {/* ── Cover-Art ── */}
+      {coverSrc && (
+        <div style={{ textAlign: 'center', marginBottom: 28 }}>
+          <img
+            src={coverSrc}
+            alt="Podcast Cover"
+            style={{
+              width:        isSmall ? 150 : 220,
+              height:       isSmall ? 150 : 220,
+              objectFit:    'cover',      // füllt den Rahmen; Seitenverhältnis erhalten durch sharp
+              borderRadius: 18,
+              border:       '3px solid rgba(255,255,255,0.35)',
+              boxShadow:    '0 8px 28px rgba(0,0,0,0.35)',
+              display:      'block',
+              margin:       '0 auto',
+            }}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          />
+        </div>
+      )}
+
+      {/* ── Neueste Folge Placeholder ── */}
       <div style={{ marginBottom: 28 }}>
-        <h2 style={{ color: 'white', fontFamily: "'Exo 2', sans-serif", fontWeight: 700, fontSize: mode === 'smartphone' ? '1rem' : '1.3rem', marginBottom: 12 }}>
+        <h2 style={{ color: 'white', fontFamily: "'Exo 2', sans-serif", fontWeight: 700, fontSize: isSmall ? '1rem' : '1.3rem', marginBottom: 12 }}>
           Hör jetzt in die neueste Folge rein!
         </h2>
         <div style={{ background: '#B7F3E8', border: '2.5px solid #000', borderRadius: 20, padding: '20px 24px' }}>
-          <p style={{ color: '#000', fontWeight: 600, fontSize: mode === 'smartphone' ? '0.9rem' : '1rem' }}>
+          <p style={{ color: '#000', fontWeight: 600, fontSize: isSmall ? '0.9rem' : '1rem' }}>
             Episodendaten werden nach dem ersten RSS-Fetch angezeigt
           </p>
           <p style={{ color: '#333', fontSize: '0.82rem', marginTop: 6 }}>
@@ -143,13 +186,13 @@ function PreviewContent({ mode, view }: { mode: ViewMode; view: ViewConfig }) {
         </div>
       </div>
 
-      {/* Plattformen */}
+      {/* ── Plattformen ── */}
       <div>
-        <h2 style={{ color: 'white', fontFamily: "'Exo 2', sans-serif", fontWeight: 700, fontSize: mode === 'smartphone' ? '1rem' : '1.3rem', marginBottom: 12 }}>
+        <h2 style={{ color: 'white', fontFamily: "'Exo 2', sans-serif", fontWeight: 700, fontSize: isSmall ? '1rem' : '1.3rem', marginBottom: 12 }}>
           Auf diesen Plattformen hören
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: mode === 'smartphone' ? '1fr 1fr' : '1fr 1fr 1fr 1fr', gap: 12 }}>
-          {enabledPlatforms.slice(0, mode === 'smartphone' ? 4 : 8).map(p => (
+        <div style={{ display: 'grid', gridTemplateColumns: isSmall ? '1fr 1fr' : '1fr 1fr 1fr 1fr', gap: 12 }}>
+          {enabledPlatforms.slice(0, isSmall ? 4 : 8).map(p => (
             <div key={p.id} style={{ background: '#B7F3E8', border: '2.5px solid #000', borderRadius: 16, padding: '14px 12px', textAlign: 'center', opacity: p.incomplete ? 0.65 : 1 }}>
               <div style={{ fontSize: '1.5rem', marginBottom: 6 }}>🎙️</div>
               <div style={{ color: '#000', fontWeight: 600, fontSize: '0.78rem' }}>{p.name}</div>

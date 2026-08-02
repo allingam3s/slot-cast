@@ -20,8 +20,8 @@ function readConfig() {
       language: 'de',
       rssUrl: 'https://anchor.fm/s/11248c624/podcast/rss',
       baseUrl: '',
-      logoUrl: 'images/logo.png',
-      coverUrl: 'images/cover.jpg',
+      logoUrl: 'images/logo.webp',
+      coverUrl: 'images/cover.webp',
       socialLinks: { beacons: 'https://beacons.ai/all_in_gam3s', twitch: 'https://twitch.tv/all_in_gam3s' },
       seo: { keywords: 'podcast, gaming, all_in_gam3s', twitterHandle: '@all_in_gam3s' }
     };

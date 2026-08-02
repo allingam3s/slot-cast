@@ -120,7 +120,11 @@ export default function Settings() {
       const res = await fetch(`/api/upload/${type}`, { method: 'POST', body: formData });
       const data = await res.json();
       if (res.ok) {
-        // Vorschau aus der hochgeladenen Originaldatei erzeugen (sofortige Anzeige)
+        // Lokalen React-State sofort aktualisieren
+        const urlKey = type === 'logo' ? 'logoUrl' : 'coverUrl';
+        set(urlKey, data.path);
+
+        // Vorschau-Thumbnail aus der Originaldatei (sofortige Anzeige ohne Reload)
         const reader = new FileReader();
         reader.onload = e => {
           if (type === 'logo') setLogoPreview(e.target?.result as string);
@@ -128,11 +132,20 @@ export default function Settings() {
         };
         reader.readAsDataURL(file);
 
+        // Auto-Save: neuen WebP-Pfad sofort in config.json schreiben,
+        // damit die Vorschau (und später die Live-Seite) den korrekten Pfad kennt.
+        // Wir bauen das Update aus dem aktuellen config-State + neuem Pfad.
+        const autoSavePayload = { ...config, [urlKey]: data.path };
+        fetch('/api/config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(autoSavePayload),
+        }).catch(() => { /* Fehler beim Auto-Save ignorieren – Nutzer kann manuell speichern */ });
+
         setAlert({
           type: 'success',
-          text: `${type === 'logo' ? 'Logo' : 'Cover'} optimiert und gespeichert: ${data.width}×${data.height} px, ${data.sizeKb} KB WebP`
+          text: `${type === 'logo' ? 'Logo' : 'Cover'} optimiert und gespeichert: ${data.width}×${data.height} px, ${data.sizeKb} KB WebP`,
         });
-        set(type === 'logo' ? 'logoUrl' : 'coverUrl', data.path);
       } else {
         setAlert({ type: 'error', text: data.error || 'Upload fehlgeschlagen.' });
       }
