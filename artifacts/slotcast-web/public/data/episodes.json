@@ -1,13 +1,25 @@
 {
-  "lastUpdated": "2026-08-04T03:23:07.882Z",
+  "lastUpdated": "2026-08-04T08:49:29.178Z",
   "feedTitle": "SLOT-CAST | Der all_in_gam3s Podcast",
   "feedDescription": "Der SLOT-CAST ist ein Podcast über Slots, Glücksspiel, Gaming und die Mechaniken dahinter.\nWir sprechen locker und direkt über Anbieter, Spiele, Branche, Suchtmechaniken und die Verbindung zwischen Gambling und Gaming – ohne pauschal zu urteilen, aber mit klarem Blick auf das, was viele oft nicht sehen.",
   "feedImageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
   "feedLink": "https://podcasters.spotify.com/pod/show/all-in-gam3s",
   "feedAuthor": "all_in_gam3s",
   "feedLanguage": "de-de",
-  "episodeCount": 15,
+  "episodeCount": 16,
   "episodes": [
+    {
+      "guid": "11402ea5-9a80-4ddd-a00c-b951d3d17641",
+      "episodeNum": "16",
+      "title": "SLOT-CAST #016 - Red Tiger, Daily Drops & der Jackpot-Tiger im Evolution-Zoo",
+      "description": "&lt;p&gt;In Folge 16 vom &lt;strong&gt;SLOT-CAST&lt;/strong&gt; geht es um &lt;strong&gt;Red Tiger Gaming&lt;/strong&gt; – den Anbieter hinter modernen Video-Slots, Daily Drop Jackpots und Spielen wie &lt;strong&gt;Dragon’s Luck&lt;/strong&gt;, &lt;strong&gt;Pirates’ Plenty&lt;/strong&gt; und &lt;strong&gt;Gonzo’s Quest Megaways&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;Wir sprechen darüber, wie Red Tiger 2014 gegründet wurde, warum der Anbieter besonders für Jackpot-Mechaniken und Daily Drops bekannt wurde und wie Red Tiger 2019 von &lt;strong&gt;NetEnt&lt;/strong&gt; übernommen wurde. Danach wurde Red Tiger durch Evolutions Übernahme von NetEnt Teil der &lt;strong&gt;Evolution-Gruppe&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;Im Fokus stehen drei Spiele, die symbolhaft für Red Tiger sind: &lt;strong&gt;Dragon’s Luck&lt;/strong&gt; mit Dragon Coins und Drachen-Features, &lt;strong&gt;Pirates’ Plenty&lt;/strong&gt; mit Schatzkarten, Wild Monkey und Treasure Reel, sowie &lt;strong&gt;Gonzo’s Quest Megaways&lt;/strong&gt;, wo NetEnt-IP, Megaways-Mechanik und Red-Tiger-Umsetzung zusammenkommen.&lt;/p&gt;&lt;p&gt;Außerdem geht es um &lt;strong&gt;Daily Drop Jackpots&lt;/strong&gt;, &lt;strong&gt;Must-Drop-Jackpots&lt;/strong&gt;, Timer, sichtbaren Fortschritt, Megaways, Everyway und die Frage, warum solche Features im Stream so gut funktionieren, aber auch psychologisch stark ziehen können.&lt;/p&gt;&lt;p&gt;Wie immer locker, ehrlich und mit SLOT-CAST-Sarkasmus: Anbieter, Mechaniken, Jackpot-Druck, Streambarkeit und warum ein Jackpot, der heute noch fallen muss, trotzdem nicht automatisch bei dir fällt.&lt;/p&gt;",
+      "pubDate": "2026-08-03T19:00:00.000Z",
+      "url": "https://anchor.fm/s/11248c624/podcast/play/123714490/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-7-3%2Ff61dc462-d35b-68c9-7ab5-2572cbf7fc93.mp3",
+      "duration": "00:43:00",
+      "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
+      "season": "1",
+      "explicit": false
+    },
     {
       "guid": "4d8914f1-2333-4de4-ba40-fdedd910dd55",
       "episodeNum": "15",
