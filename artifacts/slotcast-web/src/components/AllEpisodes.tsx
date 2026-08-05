@@ -11,7 +11,7 @@ export function AllEpisodes() {
   }
 
   const episodes = data?.episodes || [];
-  
+
   if (episodes.length === 0) {
     return (
       <section className="mb-12 md:mb-20 stagger-enter" style={{ animationDelay: '200ms' }}>
@@ -26,40 +26,27 @@ export function AllEpisodes() {
   return (
     <section className="mb-12 md:mb-20 stagger-enter" style={{ animationDelay: '200ms' }}>
       <h2 className="heading-exo section-heading">Alle Folgen</h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
         {episodes.map((ep, idx) => (
-          <Panel key={ep.guid || idx} className="flex flex-col">
-            <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-black/60 mb-2">
+          <Panel key={ep.guid || idx} className="py-4 px-5">
+            {/* Datum · Dauer */}
+            <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-black/55 mb-1.5">
               {ep.pubDate && (
                 <span>{format(parseISO(ep.pubDate), "d. MMM yyyy", { locale: de })}</span>
               )}
               {ep.duration && (
                 <>
-                  <span className="w-1.5 h-1.5 rounded-full bg-black/20" />
+                  <span className="w-1 h-1 rounded-full bg-black/20" />
                   <span>{ep.duration}</span>
                 </>
               )}
             </div>
-            
-            <h3 className="heading-exo text-xl font-bold mb-2 line-clamp-2 leading-snug">
+
+            {/* Titel */}
+            <h3 className="heading-exo text-base md:text-lg font-bold leading-snug line-clamp-2">
               {ep.episodeNum ? `${ep.episodeNum} - ${ep.title}` : ep.title}
             </h3>
-            
-            <p className="text-sm text-black/80 mb-6 line-clamp-2 flex-grow">
-              {ep.description}
-            </p>
-            
-            <div className="mt-auto pt-2">
-              <a 
-                href={ep.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm font-bold hover:underline"
-              >
-                Jetzt anhören →
-              </a>
-            </div>
           </Panel>
         ))}
       </div>
