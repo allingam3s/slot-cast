@@ -80,13 +80,9 @@ export function Platforms() {
             </div>
           );
 
-          // Wrapper: link or plain div
-          // w-[calc(50%-8px)]       → 2 per row on mobile  (gap-4 = 16px, 1 gap: (100%-16px)/2)
-          // md:w-[calc(33.33%-11px)]→ 3 per row on md+     (gap-4 = 16px, 2 gaps: (100%-32px)/3)
-          const wrapCls = 'w-[calc(50%-8px)] md:w-[calc(33.33%-11px)]';
-
+          // .platform-item in index.css: 50% mobile, 33.333% md+ → centred last row
           return isDisabled ? (
-            <div key={platform.id} className={wrapCls}>
+            <div key={platform.id} className="platform-item">
               {card}
             </div>
           ) : (
@@ -95,7 +91,7 @@ export function Platforms() {
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${wrapCls} no-underline`}
+              className="platform-item no-underline"
             >
               {card}
             </a>

@@ -496,3 +496,15 @@
     inset: -1px;
   }
 }
+
+/* Platform grid: 2-col mobile, 3-col tablet+
+   gap-4 (16px): 2-col → (100% - 16px)  / 2 = 50%   - 8px
+   gap-5 (20px): 3-col → (100% - 2×20px)/ 3 = 33.33% - 13.33px ≈ 14px */
+.platform-item {
+  width: calc(50% - 8px);
+}
+@media (min-width: 768px) {
+  .platform-item {
+    width: calc(33.333% - 14px);
+  }
+}
