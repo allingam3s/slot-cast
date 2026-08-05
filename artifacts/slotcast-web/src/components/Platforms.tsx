@@ -10,7 +10,7 @@ const BRAND: Record<string, { bg: string; text: string }> = {
   'pocket-casts':   { bg: '#E62B33', text: '#fff' },
   podimo:           { bg: '#5C3EEE', text: '#fff' },
   beacons:          { bg: '#111111', text: '#FBCD00' },
-  twitch:           { bg: '#9146FF', text: '#fff' },
+  twitch:           { bg: '#FFFFFF', text: '#9146FF' },
   goodpods:         { bg: '#00B8A9', text: '#fff' },
 };
 

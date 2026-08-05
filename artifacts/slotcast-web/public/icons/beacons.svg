@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Beacons">
-  <!-- Beacons: stylised link-in-bio beacon shape (lightning bolt / diamond) -->
-  <path d="M13.5 2L5 13.5h6L9 22l10-11.5h-6z" fill="#FBCD00"/>
+  <!-- Beacons: signal beacon – dot + three concentric arcs -->
+  <circle cx="12" cy="21" r="2" fill="#FBCD00"/>
+  <path d="M9 17Q12 13.5 15 17" fill="none" stroke="#FBCD00" stroke-width="2" stroke-linecap="round"/>
+  <path d="M6 13.5Q12 9 18 13.5" fill="none" stroke="#FBCD00" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 10Q12 4 21 10" fill="none" stroke="#FBCD00" stroke-width="2" stroke-linecap="round"/>
 </svg>
