@@ -5,11 +5,11 @@ const BRAND: Record<string, { bg: string; text: string }> = {
   spotify:          { bg: '#1DB954', text: '#fff' },
   youtube:          { bg: '#FF0000', text: '#fff' },
   'youtube-music':  { bg: '#FF0000', text: '#fff' },
-  'amazon-music':   { bg: '#00A8E1', text: '#fff' },
+  'amazon-music':   { bg: '#232F3E', text: '#25D1DA' },
   castbox:          { bg: '#F55B23', text: '#fff' },
   'pocket-casts':   { bg: '#E62B33', text: '#fff' },
   podimo:           { bg: '#5C3EEE', text: '#fff' },
-  beacons:          { bg: '#111111', text: '#FBCD00' },
+  beacons:          { bg: '#FFFFFF', text: '#000000' },
   twitch:           { bg: '#FFFFFF', text: '#9146FF' },
   goodpods:         { bg: '#00B8A9', text: '#fff' },
 };
@@ -57,7 +57,7 @@ export function Platforms() {
                 <img
                   src={`${import.meta.env.BASE_URL}${platform.icon}`}
                   alt={platform.name}
-                  className="w-10 h-10 object-contain"
+                  className="h-10 w-auto max-w-[120px] object-contain"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
                   }}

@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" role="img" aria-label="Amazon Music">
-  <!-- Amazon Music: bold A with open counter (fill-rule evenodd cuts out triangle) -->
-  <path fill-rule="evenodd" fill="white"
-    d="M12 2L21 22H16L14 18H10L8 22H3L12 2Z M12 5.5L13.8 17H10.2Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Amazon Music">
+  <!-- Teal two-line wordmark on transparent bg (card provides dark #232F3E) -->
+  <text x="20" y="15" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="8" font-weight="700" fill="#25D1DA" letter-spacing="0.4">amazon</text>
+  <text x="20" y="25" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="8" font-weight="700" fill="#25D1DA" letter-spacing="0.4">music</text>
+  <!-- Smile / arrow -->
+  <path d="M9 32 Q20 38.5 31 32" fill="none" stroke="#25D1DA" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M28.2 30.3 L31 32 L28.2 33.7" fill="none" stroke="#25D1DA" stroke-width="1.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
