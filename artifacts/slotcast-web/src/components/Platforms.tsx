@@ -81,12 +81,12 @@ export function Platforms() {
           );
 
           // Wrapper: link or plain div
+          // w-[calc(50%-8px)]       → 2 per row on mobile  (gap-4 = 16px, 1 gap: (100%-16px)/2)
+          // md:w-[calc(33.33%-11px)]→ 3 per row on md+     (gap-4 = 16px, 2 gaps: (100%-32px)/3)
+          const wrapCls = 'w-[calc(50%-8px)] md:w-[calc(33.33%-11px)]';
+
           return isDisabled ? (
-            <div
-              key={platform.id}
-              className="md:w-[calc(33.333%-14px)]"
-              style={{ width: 'calc(50% - 8px)' }}
-            >
+            <div key={platform.id} className={wrapCls}>
               {card}
             </div>
           ) : (
@@ -95,8 +95,7 @@ export function Platforms() {
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="md:w-[calc(33.333%-14px)] no-underline"
-              style={{ width: 'calc(50% - 8px)' }}
+              className={`${wrapCls} no-underline`}
             >
               {card}
             </a>
