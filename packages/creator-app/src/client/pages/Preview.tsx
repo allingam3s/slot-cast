@@ -184,7 +184,7 @@ function PreviewContent({ mode, view }: { mode: ViewMode; view: ViewConfig }) {
     Promise.all([
       fetch('/api/config').then(r => r.json()),
       fetch('/api/platforms').then(r => r.json()),
-      fetch('/api/episodes').then(r => r.json()).catch(() => ({ episodes: [] })),
+      fetch('/api/rss/episodes').then(r => r.json()).catch(() => ({ episodes: [] })),
     ]).then(([cfg, plats, eps]) => {
       setConfig(cfg);
       setPlatforms(Array.isArray(plats) ? plats : []);

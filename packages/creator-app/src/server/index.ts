@@ -22,7 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 // API-Routen
 const { default: configRouter } = await import('./routes/config.js');
 const { default: platformsRouter } = await import('./routes/platforms.js');
-const { default: rssRouter } = await import('./routes/rss.js');
+
+const { default: rssRouter, autoFetchRssIfStale } = await import('./routes/rss.js');
 const { default: uploadRouter } = await import('./routes/upload.js');
 const { default: backupRouter } = await import('./routes/backup.js');
 const { default: gitRouter } = await import('./routes/git.js');
@@ -50,6 +51,9 @@ const vite = await createViteServer({
 });
 
 app.use(vite.middlewares);
+
+// RSS-Daten automatisch aktualisieren, falls sie fehlen oder älter als 24h sind
+autoFetchRssIfStale();
 
 // Server starten
 app.listen(PORT, '127.0.0.1', () => {

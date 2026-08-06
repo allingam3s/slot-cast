@@ -1,13 +1,57 @@
 import { Router, Request, Response } from 'express';
 import { execFile } from 'child_process';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..', '..', '..', '..', '..');
 const RSS_SCRIPT = path.join(ROOT, 'scripts', 'fetch-rss.mjs');
+const EPISODES_FILE = path.join(ROOT, 'artifacts', 'slotcast-web', 'public', 'data', 'episodes.json');
 
 const router = Router();
+
+/**
+ * Führt fetch-rss.mjs aus, wenn episodes.json fehlt, leer ist oder älter als 24h.
+ * Läuft im Hintergrund – blockiert den Serverstart nicht.
+ */
+export function autoFetchRssIfStale(): void {
+  let needsFetch = true;
+  try {
+    const data = JSON.parse(fs.readFileSync(EPISODES_FILE, 'utf-8'));
+    if (data.lastUpdated && Array.isArray(data.episodes) && data.episodes.length > 0) {
+      const ageMs = Date.now() - new Date(data.lastUpdated).getTime();
+      if (ageMs < 24 * 60 * 60 * 1000) needsFetch = false;
+    }
+  } catch {
+    // Datei fehlt oder ist ungültig – Fetch nötig
+  }
+
+  if (!needsFetch) {
+    console.log('RSS: episodes.json ist aktuell (< 24h) – kein automatischer Fetch nötig.');
+    return;
+  }
+
+  console.log('RSS: episodes.json fehlt oder ist älter als 24h – starte automatischen RSS-Fetch...');
+  execFile('node', [RSS_SCRIPT], { cwd: ROOT }, (error, stdout, stderr) => {
+    if (error) {
+      console.error('RSS: Automatischer Fetch fehlgeschlagen:', stderr || error.message);
+      console.error('RSS: Vorhandene episodes.json bleibt unverändert. Manuell über "Veröffentlichen → RSS-Feed abrufen" erneut versuchen.');
+      return;
+    }
+    console.log('RSS: Automatischer Fetch erfolgreich abgeschlossen.');
+  });
+}
+
+// GET /api/rss/episodes – gespeicherte Episodendaten liefern
+router.get('/episodes', (_req: Request, res: Response) => {
+  try {
+    const data = JSON.parse(fs.readFileSync(EPISODES_FILE, 'utf-8'));
+    res.json(data);
+  } catch {
+    res.json({ lastUpdated: null, episodes: [] });
+  }
+});
 
 // POST /api/rss/check – RSS-URL auf Erreichbarkeit testen
 router.post('/check', async (req: Request, res: Response) => {
