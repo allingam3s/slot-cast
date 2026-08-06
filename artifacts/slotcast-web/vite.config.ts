@@ -19,13 +19,8 @@ if (Number.isNaN(port) || port <= 0) {
   throw new Error(`Invalid PORT value: "${rawPort}"`);
 }
 
-const basePath = process.env.BASE_PATH;
-
-if (!basePath) {
-  throw new Error(
-    'BASE_PATH environment variable is required but was not provided.',
-  );
-}
+// Leerer/fehlender BASE_PATH → Root ('/'), z. B. bei Custom Domain auf GitHub Pages
+const basePath = process.env.BASE_PATH || '/';
 
 export default defineConfig({
   base: basePath.endsWith('/') ? basePath : basePath + '/',
