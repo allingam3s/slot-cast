@@ -1,13 +1,25 @@
 {
-  "lastUpdated": "2026-08-08T02:05:17.699Z",
+  "lastUpdated": "2026-08-08T07:04:19.131Z",
   "feedTitle": "SLOT-CAST | Der all_in_gam3s Podcast",
   "feedDescription": "Der SLOT-CAST ist ein Podcast über Slots, Glücksspiel, Gaming und die Mechaniken dahinter.\nWir sprechen locker und direkt über Anbieter, Spiele, Branche, Suchtmechaniken und die Verbindung zwischen Gambling und Gaming – ohne pauschal zu urteilen, aber mit klarem Blick auf das, was viele oft nicht sehen.",
   "feedImageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
   "feedLink": "https://podcasters.spotify.com/pod/show/all-in-gam3s",
   "feedAuthor": "all_in_gam3s",
   "feedLanguage": "de-de",
-  "episodeCount": 16,
+  "episodeCount": 17,
   "episodes": [
+    {
+      "guid": "f61ceb11-2867-4cd1-b96f-7c2ae35d48a0",
+      "episodeNum": "17",
+      "title": "SLOT-CAST #017 - Spinomenal, Demi Gods & die Slot-Fabrik voller Könige",
+      "description": "&lt;p&gt;In Folge 17 vom &lt;strong&gt;SLOT-CAST&lt;/strong&gt; geht es um &lt;strong&gt;Spinomenal&lt;/strong&gt; – den Anbieter hinter Reihen wie &lt;strong&gt;Demi Gods&lt;/strong&gt;, &lt;strong&gt;Majestic King&lt;/strong&gt; und &lt;strong&gt;Queen of Ice&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;Wir sprechen darüber, wie Spinomenal 2014 gestartet ist, über Founder und CEO &lt;strong&gt;Lior Shvartz&lt;/strong&gt;, über das Portfolio mit mehr als 300 Spielen, das &lt;strong&gt;Spinomenal Universe&lt;/strong&gt;, Lizenzen und die Frage, warum der Anbieter so stark über Serien, Fortsetzungen und wiederkehrende Welten funktioniert.&lt;/p&gt;&lt;p&gt;Im Fokus stehen &lt;strong&gt;Demi Gods&lt;/strong&gt;, &lt;strong&gt;Majestic King&lt;/strong&gt; und &lt;strong&gt;Queen of Ice&lt;/strong&gt;. Dazu kommen Book-Varianten, Hold-&amp;amp;-Hit-Spiele, Buy Features, Free Spins und die typische Spinomenal-DNA: viele Welten, viele Figuren, viele Fortsetzungen.&lt;/p&gt;&lt;p&gt;Wie immer humorvoll, ehrlich und mit Sarkasmus: Slotanbieter, Mechaniken, Serienwahn und warum ein Spiel nicht ungefährlicher wird, nur weil es phänomenal klingt.&lt;/p&gt;",
+      "pubDate": "2026-08-07T13:00:00.000Z",
+      "url": "https://anchor.fm/s/11248c624/podcast/play/123821741/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-7-5%2F71ad24a7-d806-7c0a-b0cb-7bd90724c048.mp3",
+      "duration": "00:20:33",
+      "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
+      "season": "1",
+      "explicit": false
+    },
     {
       "guid": "11402ea5-9a80-4ddd-a00c-b951d3d17641",
       "episodeNum": "16",
