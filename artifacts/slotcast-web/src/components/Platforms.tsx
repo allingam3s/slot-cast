@@ -28,7 +28,7 @@ export function Platforms() {
   if (platforms.length === 0) return null;
 
   return (
-    <section className="mb-12 md:mb-20 stagger-enter" style={{ animationDelay: '300ms' }}>
+    <section className="mb-10 md:mb-14 stagger-enter" style={{ animationDelay: '300ms' }}>
       <h2 className="heading-exo section-heading">Auf diesen Plattformen hören</h2>
 
       {/*
@@ -44,7 +44,7 @@ export function Platforms() {
 
           const card = (
             <div
-              className="flex flex-col items-center justify-center text-center rounded-2xl p-5 md:p-6 transition-transform hover:scale-[1.03] w-full"
+              className="flex flex-col items-center justify-center text-center rounded-2xl p-4 md:p-5 transition-transform hover:scale-[1.03] w-full"
               style={{
                 background: brand.bg,
                 color: brand.text,

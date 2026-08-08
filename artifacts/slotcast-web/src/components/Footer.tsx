@@ -4,7 +4,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="mt-20 py-10 border-t border-white/20 text-white text-center stagger-enter" style={{ animationDelay: '500ms' }}>
+    <footer className="mt-12 py-7 border-t border-white/20 text-white text-center stagger-enter" style={{ animationDelay: '500ms' }}>
       <div className="flex flex-col items-center justify-center gap-4">
         <p className="font-medium">
           © {currentYear} all_in_gam3s – SLOT-CAST

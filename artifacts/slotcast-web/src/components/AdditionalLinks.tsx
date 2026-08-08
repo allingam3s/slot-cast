@@ -8,7 +8,7 @@ export function AdditionalLinks() {
   if (!config.socialLinks.beacons && !config.socialLinks.twitch) return null;
 
   return (
-    <section className="mb-12 md:mb-20 stagger-enter" style={{ animationDelay: '400ms' }}>
+    <section className="mb-10 md:mb-14 stagger-enter" style={{ animationDelay: '400ms' }}>
       <h2 className="heading-exo section-heading">Auch auf</h2>
       
       <div className="grid grid-cols-2 gap-4 md:gap-6">

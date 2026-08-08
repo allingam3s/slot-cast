@@ -39,7 +39,7 @@ export function LatestEpisode() {
   const latest = sortedEpisodes[0];
 
   return (
-    <section className="mb-12 md:mb-20 stagger-enter" style={{ animationDelay: '100ms' }}>
+    <section className="mb-10 md:mb-14 stagger-enter" style={{ animationDelay: '100ms' }}>
       <h2 className="heading-exo section-heading">Hör jetzt in die neueste Folge rein!</h2>
 
       {!latest ? (
@@ -51,7 +51,7 @@ export function LatestEpisode() {
       ) : (
         <Panel>
           {/* Meta: Datum + Dauer */}
-          <div className="flex flex-wrap items-center gap-3 text-sm font-bold text-black/60 mb-2">
+          <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-bold text-black/60 mb-1.5">
             {latest.pubDate && (
               <span>{format(parseISO(latest.pubDate), "d. MMMM yyyy", { locale: de })}</span>
             )}
@@ -64,12 +64,12 @@ export function LatestEpisode() {
           </div>
 
           {/* Titel */}
-          <h3 className="heading-exo text-2xl md:text-3xl font-bold mb-3 leading-tight">
+          <h3 className="heading-exo text-xl md:text-2xl font-bold mb-2.5 leading-tight">
             {latest.episodeNum ? `${latest.episodeNum} - ${latest.title}` : latest.title}
           </h3>
 
           {/* Beschreibung (bereinigt, ~2 Zeilen) */}
-          <p className="text-black/80 leading-relaxed mb-4 max-w-3xl">
+          <p className="text-sm md:text-base text-black/80 leading-relaxed mb-3 max-w-3xl">
             {(() => {
               const clean = stripHtml(latest.description || '');
               return clean.length > TRUNCATE ? `${clean.substring(0, TRUNCATE)}…` : clean;
