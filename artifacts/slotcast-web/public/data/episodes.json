@@ -1,13 +1,25 @@
 {
-  "lastUpdated": "2026-08-14T07:41:41.215Z",
+  "lastUpdated": "2026-08-14T13:21:31.145Z",
   "feedTitle": "SLOT-CAST | Der all_in_gam3s Podcast",
   "feedDescription": "Der SLOT-CAST ist ein Podcast über Slots, Glücksspiel, Gaming und die Mechaniken dahinter.\nWir sprechen locker und direkt über Anbieter, Spiele, Branche, Suchtmechaniken und die Verbindung zwischen Gambling und Gaming – ohne pauschal zu urteilen, aber mit klarem Blick auf das, was viele oft nicht sehen.",
   "feedImageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
   "feedLink": "https://podcasters.spotify.com/pod/show/all-in-gam3s",
   "feedAuthor": "all_in_gam3s",
   "feedLanguage": "de-de",
-  "episodeCount": 17,
+  "episodeCount": 18,
   "episodes": [
+    {
+      "guid": "915bca3f-f147-4e5b-94a1-b8d7e3e72a83",
+      "episodeNum": "18",
+      "title": "SLOT-CAST #018 - Penguin King, Piggy Banks & der Bonus-Pinguin",
+      "description": "&lt;p&gt;In Folge 18 vom &lt;strong&gt;SLOT-CAST&lt;/strong&gt; geht es um &lt;strong&gt;Penguin King&lt;/strong&gt; – einen neuen Anbieter beziehungsweise Studio-Namen im iGaming, der stark mit &lt;strong&gt;Hold &amp;amp; Win&lt;/strong&gt;, Cash-Mechaniken, Boosts, Piggy Banks und einfachen Bonusideen auffällt.&lt;/p&gt;&lt;p&gt;Wir sprechen über die Verbindung zu &lt;strong&gt;Octoplay&lt;/strong&gt;, über Penguin King als junges Studio, öffentliche Zahlenfragen und die Tatsache, dass es keine sauber geprüften öffentlichen Jahresumsätze gibt.&lt;/p&gt;&lt;p&gt;Im Fokus stehen &lt;strong&gt;Break the Piggy Bank&lt;/strong&gt;, &lt;strong&gt;Super Cash Boost: Hold &amp;amp; Win&lt;/strong&gt; und &lt;strong&gt;777 Super Wheel Hold &amp;amp; Win&lt;/strong&gt;. Dazu reden wir über Hold-&amp;amp;-Win-Spannung, Boost-Mechaniken, Jackpots, Räder und warum einfache Slots manchmal besonders stark im Kopf arbeiten.&lt;/p&gt;&lt;p&gt;Wie immer humorvoll, ehrlich und sarkastisch: Der Pinguin ist süß, der Bonus ist laut und die Mathematik bleibt kalt.&lt;/p&gt;",
+      "pubDate": "2026-08-14T13:00:00.000Z",
+      "url": "https://anchor.fm/s/11248c624/podcast/play/124076550/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-7-11%2Fe5b88fb3-f7d7-c11a-fba8-1c021278c89e.mp3",
+      "duration": "00:23:19",
+      "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
+      "season": "1",
+      "explicit": false
+    },
     {
       "guid": "f61ceb11-2867-4cd1-b96f-7c2ae35d48a0",
       "episodeNum": "17",
