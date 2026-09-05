@@ -1,13 +1,25 @@
 {
-  "lastUpdated": "2026-09-05T10:25:08.016Z",
+  "lastUpdated": "2026-09-05T14:59:41.104Z",
   "feedTitle": "SLOT-CAST | Der all_in_gam3s Podcast",
   "feedDescription": "Der SLOT-CAST ist ein Podcast über Slots, Glücksspiel, Gaming und die Mechaniken dahinter.\nWir sprechen locker und direkt über Anbieter, Spiele, Branche, Suchtmechaniken und die Verbindung zwischen Gambling und Gaming – ohne pauschal zu urteilen, aber mit klarem Blick auf das, was viele oft nicht sehen.",
   "feedImageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
   "feedLink": "https://podcasters.spotify.com/pod/show/all-in-gam3s",
   "feedAuthor": "all_in_gam3s",
   "feedLanguage": "de-de",
-  "episodeCount": 19,
+  "episodeCount": 20,
   "episodes": [
+    {
+      "guid": "b9ae61ec-d648-4e9d-8deb-db88ee34482f",
+      "episodeNum": "20",
+      "title": "SLOT-CAST #020 - Thunderkick, Odin’s Gamble & Slots mit Indie-Wahnsinn",
+      "description": "&lt;p&gt;In Folge 20 vom &lt;strong&gt;SLOT-CAST&lt;/strong&gt; geht es um &lt;strong&gt;Thunderkick&lt;/strong&gt; – ein unabhängiges Slotstudio aus Stockholm, das seit 2012 für kreative, schräge und auffällige Slots steht.&lt;/p&gt;&lt;p&gt;Wir sprechen darüber, was Thunderkick als Anbieter besonders macht: in-house Entwicklung, starke Grafik, eigener Sound, ungewöhnliche Themen, kreative Features und ein Portfolio, das 2026 die Marke von 100 Spielen erreicht hat.&lt;/p&gt;&lt;p&gt;Im Fokus stehen drei Spiele, die perfekt zeigen, warum Thunderkick anders wirkt als viele andere Anbieter:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Odin’s Gamble - Reborn&lt;/strong&gt; mit nordischer Mythologie, Yggdrasil, Mimir’s Well, Wild Multipliers, Sticky Wins und Roaming Wild Stack.&lt;br&gt;&lt;strong&gt;Pink Elephants 2 - Reborn&lt;/strong&gt; mit pinken Elefanten, Mystery Scatter, Free Spins, Symbol Transformations und Feature Buy.&lt;br&gt;&lt;strong&gt;Esqueleto Explosivo 2 - Reborn&lt;/strong&gt; mit Skelett-Mariachis, Explosivo Wilds, Mucho Multipliers und Dropping Symbols.&lt;/p&gt;&lt;p&gt;Außerdem geht es darum, warum Thunderkick im Stream so gut funktioniert: viel Charakter, starke Optik, schräge Figuren und genug Material für Sarkasmus, selbst wenn der Bonus mal wieder komplett beleidigend läuft.&lt;/p&gt;&lt;p&gt;Wie immer locker, ehrlich und mit SLOT-CAST-Humor: Anbieter, Mechaniken, kreative Slots, Volatilität, Streambarkeit und warum ein pinker Elefant trotzdem kein sicherer Gewinn ist.&lt;/p&gt;",
+      "pubDate": "2026-09-04T13:00:00.000Z",
+      "url": "https://anchor.fm/s/11248c624/podcast/play/125167519/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-3%2F5f97c251-503b-0d5f-a283-082c0f3e4b19.mp3",
+      "duration": "00:35:52",
+      "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
+      "season": "1",
+      "explicit": false
+    },
     {
       "guid": "4e76c2a6-8633-402a-9b8e-eb7f7d9bbd89",
       "episodeNum": "19",
