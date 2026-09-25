@@ -1,13 +1,25 @@
 {
-  "lastUpdated": "2026-09-25T11:38:26.985Z",
+  "lastUpdated": "2026-09-25T17:00:42.846Z",
   "feedTitle": "SLOT-CAST | Der all_in_gam3s Podcast",
   "feedDescription": "Der SLOT-CAST ist ein Podcast über Slots, Glücksspiel, Gaming und die Mechaniken dahinter.\nWir sprechen locker und direkt über Anbieter, Spiele, Branche, Suchtmechaniken und die Verbindung zwischen Gambling und Gaming – ohne pauschal zu urteilen, aber mit klarem Blick auf das, was viele oft nicht sehen.",
   "feedImageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
   "feedLink": "https://podcasters.spotify.com/pod/show/all-in-gam3s",
   "feedAuthor": "all_in_gam3s",
   "feedLanguage": "de-de",
-  "episodeCount": 22,
+  "episodeCount": 23,
   "episodes": [
+    {
+      "guid": "dc3bed1f-cc92-44ff-8b8a-a42e52c45998",
+      "episodeNum": "23",
+      "title": "SLOT-CAST #023 - 3 Oaks Gaming, Hold & Win und der Aufstieg aus dem Booongo-Umfeld",
+      "description": "&lt;p&gt;3 Oaks Gaming ist erst seit wenigen Jahren unter diesem Namen am Markt und trotzdem bereits über große Aggregatoren und zahlreiche regulierte Märkte verteilt.&lt;/p&gt;&lt;p&gt;In SLOT-CAST #023 schauen Mo und Guru hinter die Marke: Woher kommt 3 Oaks? Wie eng ist die Verbindung zum früheren Booongo-Umfeld? Wer steckt heute hinter dem Unternehmen? Wie groß ist die Firma wirklich und warum gibt es kaum öffentlich geprüfte Finanzzahlen?&lt;/p&gt;&lt;p&gt;Außerdem zerlegen wir vier wichtige Spiele: &lt;strong&gt;Sun of Egypt 3, 3 Hot Chillies, Coin Volcano und Lucky Penny&lt;/strong&gt;. Wir sprechen über Hold &amp;amp; Win, Jackpots, Respins, Cascades, Multiplikatoren, Bonus Buys, RTP und Max Wins und darüber, warum solche Mechaniken gerade im Stream so gut funktionieren.&lt;/p&gt;&lt;p&gt;Natürlich schauen wir auch auf die andere Seite: hohe Volatilität, sichtbare Bonusfortschritte, Promotion-Tools und die Frage, warum &amp;quot;da fehlt doch nur noch ein Symbol&amp;quot; mathematisch keinerlei Versprechen ist.&lt;/p&gt;&lt;p&gt;🎮 all_in_gam3s: &lt;a href=&quot;https://twitch.tv/all_in_gam3s&quot;&gt;https://twitch.tv/all_in_gam3s&lt;/a&gt;&lt;br&gt;🎙️ SLOT-CAST: &lt;a href=&quot;https://derslotcast.com&quot;&gt;https://derslotcast.com&lt;/a&gt;&lt;br&gt;🎰 slotalarm: &lt;a href=&quot;https://slotalarm.com&quot;&gt;https://slotalarm.com&lt;/a&gt;&lt;br&gt;🟣 slotalarm Twitch: &lt;a href=&quot;https://twitch.tv/slotalarm&quot;&gt;https://twitch.tv/slotalarm&lt;/a&gt;&lt;br&gt;🟢 slotalarm Kick: &lt;a href=&quot;https://kick.com/slotalarm&quot;&gt;https://kick.com/slotalarm&lt;/a&gt;&lt;br&gt;📺 slotalarm Rumble: &lt;a href=&quot;https://rumble.com/user/kennekslots?e9s=src_v1_cmd&quot;&gt;https://rumble.com/user/kennekslots?e9s=src_v1_cmd&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Glücksspiel ist Unterhaltung mit Risiko und kein Einkommen, keine Rettung und kein Plan B.&lt;/p&gt;",
+      "pubDate": "2026-09-25T13:00:00.000Z",
+      "url": "https://anchor.fm/s/11248c624/podcast/play/126247749/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-24%2Fd927ec56-7f83-859b-bb38-d34eb26f9859.mp3",
+      "duration": "00:55:45",
+      "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
+      "season": "1",
+      "explicit": false
+    },
     {
       "guid": "bddb9672-8a29-4929-864f-7c0654a81dad",
       "episodeNum": "22",
