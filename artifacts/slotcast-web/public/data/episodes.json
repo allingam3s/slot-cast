@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-03T16:05:19.769Z",
+  "lastUpdated": "2026-10-03T20:55:20.359Z",
   "feedTitle": "SLOT-CAST | Der all_in_gam3s Podcast",
   "feedDescription": "Der SLOT-CAST ist ein Podcast über Slots, Glücksspiel, Gaming und die Mechaniken dahinter.\nWir sprechen locker und direkt über Anbieter, Spiele, Branche, Suchtmechaniken und die Verbindung zwischen Gambling und Gaming – ohne pauschal zu urteilen, aber mit klarem Blick auf das, was viele oft nicht sehen.",
   "feedImageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
   "feedLink": "https://podcasters.spotify.com/pod/show/all-in-gam3s",
   "feedAuthor": "all_in_gam3s",
   "feedLanguage": "de-de",
-  "episodeCount": 24,
+  "episodeCount": 25,
   "episodes": [
     {
       "guid": "38359dff-ae2e-4c33-8259-3d9a81ded3c2",
@@ -52,6 +52,18 @@
       "pubDate": "2026-09-11T13:00:00.000Z",
       "url": "https://anchor.fm/s/11248c624/podcast/play/125546189/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-8-10%2F6a3a284a-d36f-280d-dfc8-f2db5657663e.mp3",
       "duration": "00:42:04",
+      "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
+      "season": "1",
+      "explicit": false
+    },
+    {
+      "guid": "a579328d-2a06-4491-9c91-e49ba7abc9af",
+      "episodeNum": "25",
+      "title": "SLOT-CAST #025 - Belatra Games, Mummyland & was Glücksspiel und Streaming mit uns gemacht haben",
+      "description": "&lt;p&gt;SLOT-CAST #025 wird größer und persönlicher.&lt;/p&gt;&lt;p&gt;Belatra Games startet 1993 mit einem Spielautomaten aus einer Garage und entwickelt sich über Landbased-Casinos, Jackpot-Systeme und eigene Hardware zu einem internationalen Onlineanbieter mit mehr als 30 Jahren Geschichte.&lt;/p&gt;&lt;p&gt;Mo und Guru sprechen über Gründer Yuriy Voinich, Mitarbeiter, Finanzen, Märkte, Zertifizierungen, Partner und Belatras Weg von Lucky Drink bis Mummyland Treasures, Golden øks, Lucky Barrel Tavern und dem brandneuen Penalty Blast.&lt;/p&gt;&lt;p&gt;Außerdem schauen wir auf das Mummyverse, RTP, Volatilität, Max Wins, Cascades, Bonus Buys und die Frage, warum bestimmte Mechaniken gerade im Stream so gut funktionieren.&lt;/p&gt;&lt;p&gt;Danach wird es persönlich: Guru fragt Mo, was es bei ihm ausgelöst hat, als er Gurus problematische Glücksspielgeschichte verstanden hat. Hat Slotten bei Mo selbst Suchtpotenzial? Welche Grenzen gibt es? Verändert ein aktiver Chat das Verhalten eines Streamers? Und warum gehen manche Gespräche noch lange weiter, nachdem der Stream bereits offline ist?&lt;/p&gt;&lt;p&gt;🎮 all_in_gam3s: &lt;a href=&quot;https://twitch.tv/all_in_gam3s&quot;&gt;https://twitch.tv/all_in_gam3s&lt;/a&gt;&lt;br&gt;🎙️ SLOT-CAST: &lt;a href=&quot;https://derslotcast.com&quot;&gt;https://derslotcast.com&lt;/a&gt;&lt;br&gt;🎰 slotalarm: &lt;a href=&quot;https://slotalarm.com&quot;&gt;https://slotalarm.com&lt;/a&gt;&lt;br&gt;🟣 slotalarm Twitch: &lt;a href=&quot;https://twitch.tv/slotalarm&quot;&gt;https://twitch.tv/slotalarm&lt;/a&gt;&lt;br&gt;🟢 slotalarm Kick: &lt;a href=&quot;https://kick.com/slotalarm&quot;&gt;https://kick.com/slotalarm&lt;/a&gt;&lt;br&gt;📺 slotalarm Rumble: &lt;a href=&quot;https://rumble.com/user/kennekslots?e9s=src_v1_cmd&quot;&gt;https://rumble.com/user/kennekslots?e9s=src_v1_cmd&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Glücksspiel ist Unterhaltung mit Risiko und kein Einkommen, keine Rettung und kein Plan B.&lt;/p&gt;",
+      "pubDate": "2026-09-09T13:00:00.000Z",
+      "url": "https://anchor.fm/s/11248c624/podcast/play/126744818/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-3%2Fd24eb5e8-8bbd-7bdb-8ec5-d626ae8aec3f.mp3",
+      "duration": "02:00:45",
       "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
       "season": "1",
       "explicit": false
