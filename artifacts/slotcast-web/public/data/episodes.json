@@ -1,13 +1,25 @@
 {
-  "lastUpdated": "2026-10-16T16:28:57.865Z",
+  "lastUpdated": "2026-10-16T20:51:44.540Z",
   "feedTitle": "SLOT-CAST | Der all_in_gam3s Podcast",
   "feedDescription": "Der SLOT-CAST ist ein Podcast über Slots, Glücksspiel, Gaming und die Mechaniken dahinter.\nWir sprechen locker und direkt über Anbieter, Spiele, Branche, Suchtmechaniken und die Verbindung zwischen Gambling und Gaming – ohne pauschal zu urteilen, aber mit klarem Blick auf das, was viele oft nicht sehen.",
   "feedImageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
   "feedLink": "https://podcasters.spotify.com/pod/show/all-in-gam3s",
   "feedAuthor": "all_in_gam3s",
   "feedLanguage": "de-de",
-  "episodeCount": 26,
+  "episodeCount": 27,
   "episodes": [
+    {
+      "guid": "6ecfe60d-dbb8-44e8-ba77-a8de35eecf1d",
+      "episodeNum": "26",
+      "title": "SLOT-CAST #026 - Amigo Gaming, Fruit Invaders & warum plötzlich drei Figuren über jedem Slot sitzen",
+      "description": "&lt;p&gt;Amigo Gaming startet 2020 in Barcelona und wächst innerhalb weniger Jahre auf mehr als 150 Slots und drei bis vier neue Releases pro Monat.&lt;/p&gt;&lt;p&gt;In SLOT-CAST #026 sprechen Mo und Guru über die Geschichte des Studios, Seven Springs Solutions, die heutige CLOUDBRIDGE LTD, Mitarbeiter, Finanzen, internationale Expansion, Schweden, Anjouan und die enorme Zahl neuer Partnerschaften.&lt;/p&gt;&lt;p&gt;Außerdem zerlegen wir &lt;strong&gt;Blazing Crown, Fruit Invaders, Fortune Bags und 1000 Olympus Rivals&lt;/strong&gt; und erklären Amigos zentrale Mechaniken &lt;strong&gt;Pin Win und Pile Collector&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;Warum sitzen inzwischen ständig drei Figuren über den Walzen? Warum funktionieren solche Features gerade im Stream so gut? Und wann wird aus Wiedererkennungswert irgendwann ein Baukasten?&lt;/p&gt;&lt;p&gt;🎮 all_in_gam3s: &lt;a href=&quot;https://twitch.tv/all_in_gam3s&quot;&gt;https://twitch.tv/all_in_gam3s&lt;/a&gt;&lt;br&gt;🎙️ SLOT-CAST: &lt;a href=&quot;https://derslotcast.com&quot;&gt;https://derslotcast.com&lt;/a&gt;&lt;br&gt;🎰 slotalarm: &lt;a href=&quot;https://slotalarm.com&quot;&gt;https://slotalarm.com&lt;/a&gt;&lt;br&gt;🟣 slotalarm Twitch: &lt;a href=&quot;https://twitch.tv/slotalarm&quot;&gt;https://twitch.tv/slotalarm&lt;/a&gt;&lt;br&gt;🟢 slotalarm Kick: &lt;a href=&quot;https://kick.com/slotalarm&quot;&gt;https://kick.com/slotalarm&lt;/a&gt;&lt;br&gt;📺 slotalarm Rumble: &lt;a href=&quot;https://rumble.com/user/kennekslots?e9s=src_v1_cmd&quot;&gt;https://rumble.com/user/kennekslots?e9s=src_v1_cmd&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Glücksspiel ist Unterhaltung mit Risiko und kein Einkommen, keine Rettung und kein Plan B.&lt;/p&gt;",
+      "pubDate": "2026-10-16T13:00:00.000Z",
+      "url": "https://anchor.fm/s/11248c624/podcast/play/127563433/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-9-16%2F465a8838-479b-1e77-5db2-60fb0b78d1fc.mp3",
+      "duration": "00:56:36",
+      "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
+      "season": "1",
+      "explicit": false
+    },
     {
       "guid": "0e735c5e-85e4-4af0-a26e-ddec39beded1",
       "episodeNum": "25",
