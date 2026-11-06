@@ -1,13 +1,25 @@
 {
-  "lastUpdated": "2026-11-06T06:11:30.067Z",
+  "lastUpdated": "2026-11-06T19:13:09.296Z",
   "feedTitle": "SLOT-CAST | Der all_in_gam3s Podcast",
   "feedDescription": "Der SLOT-CAST ist ein Podcast über Slots, Glücksspiel, Gaming und die Mechaniken dahinter.\nWir sprechen locker und direkt über Anbieter, Spiele, Branche, Suchtmechaniken und die Verbindung zwischen Gambling und Gaming – ohne pauschal zu urteilen, aber mit klarem Blick auf das, was viele oft nicht sehen.",
   "feedImageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
   "feedLink": "https://podcasters.spotify.com/pod/show/all-in-gam3s",
   "feedAuthor": "all_in_gam3s",
   "feedLanguage": "de-de",
-  "episodeCount": 29,
+  "episodeCount": 30,
   "episodes": [
+    {
+      "guid": "a9d45f65-53b8-4d3f-be3d-1675e68f08b8",
+      "episodeNum": "29",
+      "title": "SLOT-CAST #029 - Backseat Gaming, eigener RGS, Clutch & warum unsere Bonus Hunts ein Problem haben",
+      "description": "&lt;p&gt;Backseat Gaming startet 2023 mit Lord Venom als erstem Partnerstudio auf Hacksaws OpenRGS. Drei Jahre später betreibt das Studio einen eigenen RGS, veröffentlicht ungefähr jede Woche einen neuen Slot und hat den kompletten Clutch-Gaming-Katalog unter einer gemeinsamen Marke zusammengeführt.&lt;/p&gt;&lt;p&gt;In SLOT-CAST #029 sprechen Mo und Guru über &lt;strong&gt;Espen Oeye, Hacksaw OpenRGS, die technische Unabhängigkeit, Hub88, den Rookie-of-the-Year-Award und Backseats enorme Release-Geschwindigkeit&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;Außerdem zerlegen wir &lt;strong&gt;Lord Venom, Barrel Bonanza, Born in Hell, Toad Town und Totem Tower Bonanza&lt;/strong&gt; und sprechen über Wild Reels, Multiplikatoren, High Volatility, unterschiedliche RTP-Versionen und Feature Buys bis mehrere hundertfachem Einsatz.&lt;/p&gt;&lt;p&gt;Aus unserer Streaming-Perspektive gibt es diesmal auch deutliche Kritik: Backseat-Games sind optisch und mechanisch sehr streambar, für unsere Bonus Hunts aktuell aber teilweise schlecht geeignet. Wir haben mehrfach erlebt, dass erspielte Boni nach dem Schließen nicht oder nur kurz gespeichert bleiben. Warum das technisch passiert, können wir nicht sicher sagen, für ein späteres Bonus Opening ist es für uns trotzdem ein echter Nachteil.&lt;/p&gt;&lt;p&gt;🎮 all_in_gam3s: &lt;a href=&quot;https://twitch.tv/all_in_gam3s&quot;&gt;https://twitch.tv/all_in_gam3s&lt;/a&gt;&lt;br&gt;🎙️ SLOT-CAST: &lt;a href=&quot;https://derslotcast.com&quot;&gt;https://derslotcast.com&lt;/a&gt;&lt;br&gt;🎰 slotalarm: &lt;a href=&quot;https://slotalarm.com&quot;&gt;https://slotalarm.com&lt;/a&gt;&lt;br&gt;🟣 slotalarm Twitch: &lt;a href=&quot;https://twitch.tv/slotalarm&quot;&gt;https://twitch.tv/slotalarm&lt;/a&gt;&lt;br&gt;🟢 slotalarm Kick: &lt;a href=&quot;https://kick.com/slotalarm&quot;&gt;https://kick.com/slotalarm&lt;/a&gt;&lt;br&gt;📺 slotalarm Rumble: &lt;a href=&quot;https://rumble.com/user/kennekslots?e9s=src_v1_cmd&quot;&gt;https://rumble.com/user/kennekslots?e9s=src_v1_cmd&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Glücksspiel ist Unterhaltung mit Risiko und kein Einkommen, keine Rettung und kein Plan B.&lt;/p&gt;",
+      "pubDate": "2026-11-06T14:00:00.000Z",
+      "url": "https://anchor.fm/s/11248c624/podcast/play/128871968/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-10-5%2F525db49f-b222-cd74-7f7a-9e0539ad4df1.mp3",
+      "duration": "00:51:27",
+      "imageUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/45917265/45917265-1778146070627-1f954a1c25b86.jpg",
+      "season": "1",
+      "explicit": false
+    },
     {
       "guid": "f73d1226-a580-40f6-8d5f-41161e393a53",
       "episodeNum": "28",
